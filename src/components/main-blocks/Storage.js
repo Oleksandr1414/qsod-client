@@ -8,6 +8,7 @@ import { ReactComponent as Add } from "./../../assets/actions/Add.svg";
 import { ReactComponent as Edit } from "./../../assets/actions/Edit.svg";
 import { ReactComponent as Delete } from "./../../assets/actions/Delete.svg";
 import { ReactComponent as ArrowRightUp } from "./../../assets/actions/ArrowRightUp.svg";
+import FoodBlock from "./storage/FoodBlock";
 
 export default function Storage() {
   const navigate = useNavigate();
@@ -76,152 +77,38 @@ export default function Storage() {
           <div className="items-list-scroll">
             <>
               <p className="class-header">Meat (5)</p>
-              <div className="items-block">
-                <p>1A3BDC6</p>
-                <div className="items-icon">AL</div>
-                <p>Pork</p>
-                <input className="items-value" defaultValue={250} disabled />
-                <div className="items-actions">
-                  <button className="edit">
-                    <Edit />
-                  </button>
-                  <button className="delete">
-                    <Delete />
-                  </button>
-                </div>
-              </div>
-              <div className="items-block">
-                <p>1A3BDC7</p>
-                <div className="items-icon">CH</div>
-                <p>Chicken</p>
-                <input className="items-value" defaultValue={250} disabled />
-                <div className="items-actions">
-                  <button className="edit">
-                    <Edit />
-                  </button>
-                  <button className="delete">
-                    <Delete />
-                  </button>
-                </div>
-              </div>
-              <div className="items-block">
-                <p>1A3BDC8</p>
-                <div className="items-icon">VE</div>
-                <p>Veal</p>
-                <input className="items-value" defaultValue={250} disabled />
-                <div className="items-actions">
-                  <button className="edit">
-                    <Edit />
-                  </button>
-                  <button className="delete">
-                    <Delete />
-                  </button>
-                </div>
-              </div>
+              <FoodBlock id={"1A3BDC6"} img={"AL"} name={"Pork"} amount={300} />
+              <FoodBlock
+                id={"1A3BDC7"}
+                img={"CH"}
+                name={"Chicken"}
+                amount={1100}
+              />
+              <FoodBlock id={"1A3BDC8"} img={"VE"} name={"Veal"} amount={250} />
             </>
             <>
               <p className="class-header">Fruits (10)</p>
-              <div className="items-block">
-                <p>1A3BDC6</p>
-                <div className="items-icon">AL</div>
-                <p>Pork</p>
-                <input className="items-value" defaultValue={250} disabled />
-                <div className="items-actions">
-                  <button className="edit">
-                    <Edit />
-                  </button>
-                  <button className="delete">
-                    <Delete />
-                  </button>
-                </div>
-              </div>
-              <div className="items-block">
-                <p>1A3BDC7</p>
-                <div className="items-icon">CH</div>
-                <p>Chicken</p>
-                <input className="items-value" defaultValue={250} disabled />
-                <div className="items-actions">
-                  <button className="edit">
-                    <Edit />
-                  </button>
-                  <button className="delete">
-                    <Delete />
-                  </button>
-                </div>
-              </div>
-              <div className="items-block">
-                <p>1A3BDC8</p>
-                <div className="items-icon">VE</div>
-                <p>Veal</p>
-                <input className="items-value" defaultValue={250} disabled />
-                <div className="items-actions">
-                  <button className="edit">
-                    <Edit />
-                  </button>
-                  <button className="delete">
-                    <Delete />
-                  </button>
-                </div>
-              </div>
-              <div className="items-block">
-                <p>1A3BDC8</p>
-                <div className="items-icon">VE</div>
-                <p>Veal</p>
-                <input className="items-value" defaultValue={250} disabled />
-                <div className="items-actions">
-                  <button className="edit">
-                    <Edit />
-                  </button>
-                  <button className="delete">
-                    <Delete />
-                  </button>
-                </div>
-              </div>
+              <FoodBlock id={"1A3BDC6"} img={"AL"} name={"Pork"} amount={110} />
+              <FoodBlock
+                id={"1A3BDC7"}
+                img={"VE"}
+                name={"Chicken"}
+                amount={250}
+              />
+              <FoodBlock id={"1A3BDC8"} img={"VE"} name={"Veal"} amount={300} />
+              <FoodBlock id={"1A3BDC8"} img={"VE"} name={"Veal"} amount={420} />
             </>
             <>
               <p className="class-header">Milk (5)</p>
-              <div className="items-block">
-                <p>1A3BDC6</p>
-                <div className="items-icon">AL</div>
-                <p>Pork</p>
-                <input className="items-value" defaultValue={250} disabled />
-                <div className="items-actions">
-                  <button className="edit">
-                    <Edit />
-                  </button>
-                  <button className="delete">
-                    <Delete />
-                  </button>
-                </div>
-              </div>
-              <div className="items-block">
-                <p>1A3BDC7</p>
-                <div className="items-icon">CH</div>
-                <p>Chicken</p>
-                <input className="items-value" defaultValue={250} disabled />
-                <div className="items-actions">
-                  <button className="edit">
-                    <Edit />
-                  </button>
-                  <button className="delete">
-                    <Delete />
-                  </button>
-                </div>
-              </div>
-              <div className="items-block">
-                <p>1A3BDC8</p>
-                <div className="items-icon">VE</div>
-                <p>Veal</p>
-                <input className="items-value" defaultValue={250} disabled />
-                <div className="items-actions">
-                  <button className="edit">
-                    <Edit />
-                  </button>
-                  <button className="delete">
-                    <Delete />
-                  </button>
-                </div>
-              </div>
+              <FoodBlock id={"1A3BDC6"} img={"AL"} name={"Pork"} amount={140} />
+              <FoodBlock id={"1A3BDC8"} img={"VE"} name={"Veal"} amount={420} />
+              <FoodBlock
+                id={"1A3BDC6"}
+                img={"CO"}
+                name={"Pork"}
+                amount={1420}
+              />
+              <FoodBlock id={"1A3BDC8"} img={"AF"} name={"Veal"} amount={420} />
             </>
           </div>
         </div>

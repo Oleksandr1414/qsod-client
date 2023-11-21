@@ -447,12 +447,18 @@ input.items-value {
   font-size: 0.95rem;
 
   border: 0;
+  border-bottom: 1px solid rgb(144, 144, 144);
   border-radius: var(--border-radius-small);
 
   background-color: #f1f1f1;
+
+  transition: border-bottom 0.3s;
 }
 input.items-value:focus {
   outline: none;
+}
+input.items-value:disabled {
+  border-bottom: 1px solid transparent;
 }
 .items-actions {
   display: flex;
@@ -506,4 +512,14 @@ button.edit:hover > svg {
 }
 button.edit:hover > svg > path {
   stroke: #ffcc00;
+}
+
+button.check {
+  background-color: #7bc043;
+}
+button.check:hover > svg {
+  background-color: #f1f8ec;
+}
+button.check:hover > svg > path {
+  stroke: #7bc043;
 }
