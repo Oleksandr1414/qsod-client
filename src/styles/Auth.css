@@ -1,0 +1,66 @@
+.auth-container {
+  position: relative;
+
+  width: 900px;
+  height: 500px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  border-radius: var(--border-radius-small);
+
+  background-color: #f1f1f1;
+
+  overflow: hidden;
+}
+
+.auth-container > form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.media-container {
+  background-color: #a6cf98;
+}
+
+.back-button {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.social-container {
+  width: max-content;
+  height: 44px;
+
+  padding-right: 12px;
+
+  display: flex;
+  gap: 14px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 0.9em;
+  color: #fff;
+  text-transform: uppercase;
+
+  border: 1px solid #ed2b2a;
+  border-radius: var(--border-radius-ultra-small);
+
+  background-color: #ed2b2a;
+}
+.social-container > svg {
+  width: 44px;
+  height: 44px;
+
+  padding: 12px;
+
+  border-right: 1px solid #bb2525;
+  border-radius: var(--border-radius-ultra-small);
+
+  background-color: #bb2525;
+}

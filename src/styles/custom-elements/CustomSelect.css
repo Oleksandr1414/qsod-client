@@ -1,0 +1,78 @@
+.wrapper-dropdown {
+  position: relative;
+
+  height: 40px;
+
+  border-radius: var(--border-radius-small);
+}
+
+.arrow {
+  float: right;
+  rotate: 180deg;
+}
+
+.selected-display {
+}
+
+.wrapper-dropdown > svg {
+  width: 40px;
+  height: 40px;
+
+  transition: all 0.3s;
+}
+.wrapper-dropdown > svg > path {
+  stroke: #fff;
+}
+
+.wrapper-dropdown::before {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+
+  margin-top: -2px;
+
+  border-width: 6px 6px 0 6px;
+  border-style: solid;
+  border-color: #fff transparent;
+}
+
+.rotated {
+  transform: rotate(360deg) !important;
+}
+
+.wrapper-dropdown .dropdown {
+  transition: 0.3s;
+
+  position: absolute;
+  top: 120%;
+  right: 0;
+  left: 0;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  z-index: 99;
+
+  border-radius: var(--border-radius-small);
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+.wrapper-dropdown .dropdown li {
+  overflow: hidden;
+}
+
+.wrapper-dropdown .dropdown li:last-child {
+  border-bottom: none;
+}
+
+.wrapper-dropdown .dropdown li:hover {
+}
+
+.wrapper-dropdown.active .dropdown {
+  opacity: 1;
+  visibility: visible;
+}

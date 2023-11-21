@@ -1,0 +1,169 @@
+.generation-container {
+  width: 100%;
+  height: 100svh;
+
+  margin-top: 70px;
+  padding: 0 20px 20px 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.generation-options-container {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.generation-options-container > *:nth-last-child(1) {
+  margin-top: 10svh;
+}
+.generation-options-container > img {
+  position: absolute;
+  top: 70px;
+  left: 20px;
+
+  width: calc(100% - 40px);
+  height: calc(100svh - 80px);
+
+  object-fit: none;
+
+  border-radius: var(--border-radius);
+
+  z-index: -1;
+}
+.generation-options-title {
+  margin-top: -80px;
+
+  font-size: 4rem;
+  line-height: 5rem;
+  font-weight: 600;
+}
+
+.generation-options-subtitle {
+  font-size: 2.5rem;
+  line-height: 3rem;
+  font-weight: 300;
+}
+
+.option-block {
+  width: max-content;
+  height: max-content;
+
+  padding: 20px;
+
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+
+  border-radius: var(--border-radius);
+  background-color: rgba(256, 256, 2526, 0.9);
+}
+.option-inputs {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+.option-input {
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.option-input > .custom-select {
+  width: 260px;
+
+  font-weight: 500;
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+
+  padding: 0 5px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  gap: 10px;
+
+  border: 0;
+
+  background-color: transparent;
+
+  cursor: pointer;
+}
+
+.option-input:nth-last-child(1) > .custom-select {
+  width: 150px;
+}
+.option-input:nth-last-child(1) > .custom-select > .dropdown {
+  width: 170px;
+  left: 40%;
+}
+.option-input > .custom-select > .dropdown {
+  width: 280px;
+  left: 50%;
+
+  background-color: rgba(256, 256, 256, 0.9);
+
+  transform: translateX(-50%);
+}
+.option-input > .custom-select li {
+  font-size: 1rem;
+}
+.option-input > p {
+  padding: 0 5px;
+
+  font-size: 1rem;
+  font-weight: 300;
+
+  color: grey;
+}
+
+.option-search > button {
+  height: 100%;
+
+  padding: 0 20px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #fff;
+
+  border-radius: var(--border-radius-small);
+  border: 0;
+
+  background-color: #000;
+
+  cursor: pointer;
+
+  transition: background-color 0.3s;
+}
+.option-search > button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.option-search > button > svg {
+  width: 45px;
+  height: 45px;
+}
+.option-search > button > svg > path {
+  stroke: #fff;
+}
+
+.vertical-line {
+  width: 1px;
+  height: 80%;
+
+  border-radius: 1px;
+  background-color: lightgray;
+}

@@ -1,0 +1,509 @@
+.storage-container {
+  width: 100%;
+  height: 100svh;
+
+  margin-top: 70px;
+  padding: 0 20px 20px 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.share-container {
+  width: 600px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.custom-picture-container {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+  border-radius: var(--border-radius);
+
+  background-color: #f1f1f1;
+}
+.custom-picture-container > img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: bottom;
+}
+.dishes-list-container {
+  position: relative;
+
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+  border-radius: var(--border-radius);
+  border-bottom-right-radius: 0;
+
+  background-color: #f1f1f1;
+}
+.dishes-list-container > img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: bottom;
+
+  border-bottom-right-radius: 30px;
+}
+.dishes-generation-button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  width: 190px;
+  height: 50px;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  border-radius: var(--border-radius) 0;
+
+  background-color: #fff;
+}
+.dishes-generation-button > button {
+  height: 40px;
+  width: 180px;
+
+  padding: 0px 5px;
+
+  color: #fff;
+  font-size: 1rem;
+
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 7px;
+
+  border: none;
+  border-radius: var(--border-radius);
+
+  background-color: #000;
+
+  cursor: pointer;
+}
+.dishes-generation-button > button > svg {
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+
+  transition: background-color 0.3s, stroke 0.3s;
+}
+.dishes-generation-button > button:hover > svg {
+  background-color: #fff;
+}
+.dishes-generation-button > button:hover > svg > path {
+  stroke: #000;
+}
+.dishes-generation-button > button > svg > path {
+  stroke: #fff;
+}
+.dishes-generation-button > svg {
+  position: absolute;
+
+  width: 24px;
+  height: 24px;
+}
+.dishes-generation-button > svg.top-right {
+  top: -24px;
+  right: 0;
+}
+.dishes-generation-button > svg.bottom-left {
+  left: -24px;
+  bottom: 0;
+}
+
+.items-navigation-container {
+  width: 100%;
+  height: 80px;
+
+  padding: 20px 34% 20px 15%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+
+  border-radius: var(--border-radius);
+
+  background-color: #f1f1f1;
+}
+.items-navigation-container > input {
+  width: 180px;
+
+  padding: 0px 16px;
+
+  font-size: 1rem;
+
+  border: none;
+  border-radius: var(--border-radius-small);
+
+  background-color: #fff;
+}
+.items-navigation-container > input:focus {
+  outline: none;
+}
+button.add {
+  width: max-content;
+  height: 40px;
+
+  padding: 0 16px 0 4px;
+
+  display: flex;
+  flex-direction: row;
+  gap: 7px;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1rem;
+  color: #fff;
+
+  border: none;
+  border-radius: 40px;
+
+  background-color: #000;
+
+  cursor: pointer;
+}
+button.add > svg {
+  padding: 2px;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+
+  transition: background-color 0.3s, stroke 0.3s;
+}
+button.add > svg > path {
+  stroke: #fff;
+}
+button.add:hover > svg {
+  background-color: #fff;
+}
+button.add:hover > svg > path {
+  stroke: #000;
+}
+
+.custom-datalist {
+  position: relative;
+
+  height: 40px;
+}
+.custom-datalist > input {
+  width: 180px;
+  height: 100%;
+
+  padding: 0 16px;
+
+  font-size: 1rem;
+
+  border: none;
+  border-radius: var(--border-radius-small);
+
+  background-color: #fff;
+}
+.custom-datalist > input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+.custom-datalist > input:focus {
+  outline: none;
+}
+.custom-datalist > datalist {
+  position: absolute;
+  top: 120%;
+
+  width: 180px;
+
+  gap: 5px;
+  flex-direction: column;
+
+  border: 8px solid #fff;
+  border-radius: var(--border-radius-small);
+
+  background-color: #fff;
+
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+    rgba(0, 0, 0, 0.05) 0px 5px 10px;
+
+  z-index: 12;
+}
+.custom-datalist > input::-webkit-calendar-picker-indicator {
+  display: none !important;
+}
+.custom-datalist > datalist > option {
+  padding: 8px 16px;
+
+  border-radius: var(--border-radius-ultra-small);
+
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+.custom-datalist > datalist > option:hover {
+  background-color: #f1f1f1;
+}
+
+.custom-select {
+  min-width: 180px;
+
+  padding: 0px 16px;
+
+  font-size: 1rem;
+  color: #000;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  border: none;
+  border-radius: var(--border-radius-small);
+
+  background-color: #fff;
+  cursor: pointer;
+}
+.wrapper-dropdown .dropdown {
+  width: 180px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  border: 8px solid #fff;
+
+  background-color: #fff;
+}
+.wrapper-dropdown .dropdown li {
+  padding: 8px 16px;
+
+  border-radius: var(--border-radius-ultra-small);
+
+  transition: background-color 0.3s;
+}
+.wrapper-dropdown .dropdown li:hover {
+  background-color: #f1f1f1;
+}
+.custom-select > svg {
+  width: 24px;
+  height: 24px;
+
+  transform: rotate(180deg);
+}
+.custom-select > svg > path {
+  stroke: #000;
+}
+
+.items-container {
+  width: 100%;
+  height: calc(100svh - 200px);
+
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+.items-classes {
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  border-radius: var(--border-radius);
+
+  background-color: #f1f1f1;
+}
+.items-list {
+  flex: 1;
+
+  padding: 10px;
+
+  border-radius: var(--border-radius);
+
+  background-color: #f1f1f1;
+}
+.items-list-scroll {
+  position: relative;
+
+  height: calc(100% - 66px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  border-radius: var(--border-radius-small);
+
+  overflow-y: auto;
+}
+
+.class-block {
+  height: 66px;
+
+  padding: 8px 16px;
+
+  display: grid;
+  grid-template-columns: 50px 150px;
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 5px;
+
+  border-radius: var(--border-radius-small);
+
+  background-color: #fff;
+
+  cursor: pointer;
+
+  transition: background-color 0.3s;
+}
+.class-block:hover {
+  background-color: rgb(250, 250, 250) !important;
+}
+.class-icon {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-row: 1/3;
+
+  border-radius: 50%;
+
+  background-color: #99cc33;
+}
+.class-title {
+  font-size: 1rem;
+  font-weight: 600;
+
+  align-self: flex-end;
+}
+.class-subtitle {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: grey;
+
+  align-self: flex-start;
+}
+.class-header {
+  margin-top: 25px;
+  margin-bottom: 5px;
+  padding-left: 30px;
+
+  color: grey;
+  font-weight: 400;
+}
+.items-list-header > p {
+  font-weight: 600;
+}
+.items-list-header,
+.items-block {
+  height: 66px;
+
+  padding: 8px 16px;
+
+  display: grid;
+  grid-template-columns: 100px 100px 2fr 3fr 85px;
+  align-items: center;
+
+  border-radius: var(--border-radius-small);
+
+  background-color: #fff;
+}
+.items-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background-color: rgb(249, 71, 71);
+}
+input.items-value {
+  width: 130px;
+  height: 40px;
+
+  padding: 8px 16px;
+  font-size: 0.95rem;
+
+  border: 0;
+  border-radius: var(--border-radius-small);
+
+  background-color: #f1f1f1;
+}
+input.items-value:focus {
+  outline: none;
+}
+.items-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.items-actions > button {
+  width: 40px;
+  height: 40px;
+
+  padding: 3px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  border: none;
+
+  cursor: pointer;
+}
+.items-actions > button > svg {
+  width: 32px;
+  height: 32px;
+
+  padding: 3px;
+
+  border-radius: 50%;
+
+  transition: background-color 0.3s, stroke 0.3s;
+}
+.items-actions > button > svg > path {
+  stroke: #fff;
+}
+
+button.delete {
+  background-color: #cc3300;
+}
+button.delete:hover > svg {
+  background-color: #f9eae5;
+}
+button.delete:hover > svg > path {
+  stroke: #cc3300;
+}
+
+button.edit {
+  background-color: #ffcc00;
+}
+button.edit:hover > svg {
+  background-color: #fff9e5;
+}
+button.edit:hover > svg > path {
+  stroke: #ffcc00;
+}
