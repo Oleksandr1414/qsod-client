@@ -2,12 +2,13 @@ import anime from "animejs";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+import "../../styles/Auth.css";
+
 import { ReactComponent as BackButton } from "./../../assets/BackButton.svg";
-// import { ReactComponent as GoogleIcon } from "./../../assets/social_icons/GoogleIcon.svg";
 import { ReactComponent as Corner } from "./../../assets/Corner.svg";
 import { ReactComponent as LoginIcon } from "./../../assets/auth-page/LoginIcon.svg";
 
-export default function Login({ changePageFunc }) {
+export default function Login() {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -27,23 +28,8 @@ export default function Login({ changePageFunc }) {
     });
   }, []);
 
-  const outAnimationForm = anime({
-    targets: ".login-form",
-    opacity: [1, 0],
-    translateY: [0, 100],
-    duration: 1000,
-    easing: "easeOutCirc",
-  });
-  const outAnimationAuth = anime({
-    targets: ".auth-picture-container",
-    opacity: [1, 0],
-    translateY: [0, -100],
-    duration: 1000,
-    easing: "easeOutCirc",
-  });
-
   return (
-    <>
+    <div className="auth-container">
       <form action="#" className="login-form">
         <p className="auth-title">Login to Your Account</p>
         <input id="email" type="email" placeholder="Type your email.." />
@@ -54,24 +40,31 @@ export default function Login({ changePageFunc }) {
         </button>
         <div className="link-to">
           New to App?&nbsp;
-          <button
+          <div
             onClick={() => {
-              outAnimationAuth.play();
-              outAnimationForm.play();
+              anime({
+                targets: ".login-form",
+                opacity: [1, 0],
+                translateY: [0, 100],
+                duration: 1000,
+                easing: "easeOutCirc",
+              });
+              anime({
+                targets: ".auth-picture-container",
+                opacity: [1, 0],
+                translateY: [0, -100],
+                duration: 1000,
+                easing: "easeOutCirc",
+              });
 
               setTimeout(() => {
-                changePageFunc(false);
-              }, 1050);
+                navigate("/signup");
+              }, 1000);
             }}
           >
             Create an account
-          </button>
+          </div>
         </div>
-        {/* <span>or</span>
-      <hr />
-      <div className="social-container">
-        <GoogleIcon /> login with Google6
-      </div> */}
       </form>
       <div className="auth-picture-container">
         <img
@@ -86,6 +79,6 @@ export default function Login({ changePageFunc }) {
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 }

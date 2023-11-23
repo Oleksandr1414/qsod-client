@@ -149,15 +149,26 @@
 
   transition: background-color 0.3s;
 }
-.option-search > button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
 .option-search > button > svg {
-  width: 45px;
-  height: 45px;
+  width: 55px;
+  height: 55px;
+
+  padding: 5px;
+
+  border-radius: 50%;
+
+  transition: background-color 0.3s;
 }
 .option-search > button > svg > path {
   stroke: #fff;
+
+  transition: stroke 0.3s;
+}
+.option-search > button:hover > svg {
+  background-color: #fff;
+}
+.option-search > button:hover > svg > path {
+  stroke: #000;
 }
 
 .vertical-line {

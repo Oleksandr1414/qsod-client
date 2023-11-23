@@ -27,7 +27,12 @@ export default function FoodBlock({ id, img, name, amount }) {
             <Check />
           </button>
         )}
-        <button className="delete">
+        <button
+          className="delete"
+          onClick={() =>
+            window.confirm("Do you confirm the deletion of this item?")
+          }
+        >
           <Delete />
         </button>
       </div>

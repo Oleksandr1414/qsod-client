@@ -196,12 +196,18 @@ form.login-form > button:hover > svg > path,
 form.login-form > button:hover > svg > circle {
   stroke: #000;
 }
-.link-to > button {
+.link-to {
   margin-top: 15px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.link-to > div {
   padding: 0;
 
   font-size: 1.1rem;
-
   color: grey;
 
   border: none;
@@ -210,7 +216,7 @@ form.login-form > button:hover > svg > circle {
 
   transition: color 0.2s;
 }
-.link-to > button:hover {
+.link-to > div:hover {
   color: #000;
 }
 
@@ -252,15 +258,12 @@ form.login-form > button:hover > svg > circle {
 }
 .gender-container > div:nth-child(1) > label {
   padding-left: 20px;
+
+  background-color: #186f65;
+
+  border-radius: var(--border-radius-small);
 }
 .gender-container > div > label > svg {
   width: 36px;
   height: 36px;
-}
-
-.gender-container > div > input:checked + {
-  background-color: #1e90ff;
-  color: #f1f3f5;
-
-  transition: 0.3s;
 }

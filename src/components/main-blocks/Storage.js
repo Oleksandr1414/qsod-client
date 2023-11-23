@@ -1,14 +1,13 @@
-import CustomSelect from "../custom-select/CustomSelect";
 import CustomDatalist from "../custom-select/CustomDatalist";
+import CustomSelect from "../custom-select/CustomSelect";
+import FoodBlock from "./storage/FoodBlock";
+import ClassBlock from "./storage/ClassBlock";
 import { useNavigate } from "react-router-dom";
 
 import "../../styles/main-blocks/Storage.css";
 
 import { ReactComponent as Add } from "./../../assets/actions/Add.svg";
-import { ReactComponent as Edit } from "./../../assets/actions/Edit.svg";
-import { ReactComponent as Delete } from "./../../assets/actions/Delete.svg";
 import { ReactComponent as ArrowRightUp } from "./../../assets/actions/ArrowRightUp.svg";
-import FoodBlock from "./storage/FoodBlock";
 
 export default function Storage() {
   const navigate = useNavigate();
@@ -36,35 +35,10 @@ export default function Storage() {
       </div>
       <div className="items-container">
         <div className="items-classes">
-          <div className="class-block">
-            <div className="class-icon">AL</div>
-            <div className="class-title">All categories</div>
-            <div className="class-subtitle">15 products available</div>
-          </div>
-          <div
-            className="class-block"
-            style={{ backgroundColor: "transparent" }}
-          >
-            <div className="class-icon">FO</div>
-            <div className="class-title">Meat</div>
-            <div className="class-subtitle">5 products available</div>
-          </div>
-          <div
-            className="class-block"
-            style={{ backgroundColor: "transparent" }}
-          >
-            <div className="class-icon">FU</div>
-            <div className="class-title">Fruits</div>
-            <div className="class-subtitle">10 products available</div>
-          </div>
-          <div
-            className="class-block"
-            style={{ backgroundColor: "transparent" }}
-          >
-            <div className="class-icon">MI</div>
-            <div className="class-title">Milk</div>
-            <div className="class-subtitle">5 products available</div>
-          </div>
+          <ClassBlock icon={"AL"} title={"All categories"} productsCount={15} />
+          <ClassBlock icon={"FO"} title={"Meat"} productsCount={5} />
+          <ClassBlock icon={"FU"} title={"Fruits"} productsCount={10} />
+          <ClassBlock icon={"MI"} title={"Milk"} productsCount={7} />
         </div>
         <div className="items-list">
           <div className="items-list-header">

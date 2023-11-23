@@ -2,13 +2,15 @@ import anime from "animejs";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+import "../../styles/Auth.css";
+
 import { ReactComponent as BackButton } from "./../../assets/BackButton.svg";
 import { ReactComponent as MaleIcon } from "./../../assets/genders/MaleIcon.svg";
 import { ReactComponent as FemaleIcon } from "./../../assets/genders/FemaleIcon.svg";
 import { ReactComponent as Corner } from "./../../assets/Corner.svg";
 import { ReactComponent as AddUserIcon } from "./../../assets/auth-page/AddUserIcon.svg";
 
-export default function SignUp({ changePageFunc }) {
+export default function SignUp() {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,23 +30,8 @@ export default function SignUp({ changePageFunc }) {
     });
   }, []);
 
-  const outAnimationForm = anime({
-    targets: ".login-form",
-    opacity: [1, 0],
-    translateY: [0, -100],
-    duration: 1000,
-    easing: "easeOutCirc",
-  });
-  const outAnimationAuth = anime({
-    targets: ".auth-picture-container",
-    opacity: [1, 0],
-    translateY: [0, 100],
-    duration: 1000,
-    easing: "easeOutCirc",
-  });
-
   return (
-    <>
+    <div className="auth-container">
       <div className="auth-picture-container sign-in">
         <img
           src="https://qph.cf2.quoracdn.net/main-qimg-c058b36cd1b52cb2d9fef42a7d9045eb-lq"
@@ -92,20 +79,32 @@ export default function SignUp({ changePageFunc }) {
         </button>
         <div className="link-to">
           Already have an account?&nbsp;
-          <button
+          <div
             onClick={() => {
-              outAnimationAuth.play();
-              outAnimationForm.play();
+              anime({
+                targets: ".auth-picture-container",
+                opacity: [1, 0],
+                translateY: [0, 100],
+                duration: 1000,
+                easing: "easeOutCirc",
+              });
+              anime({
+                targets: ".login-form",
+                opacity: [1, 0],
+                translateY: [0, -100],
+                duration: 1000,
+                easing: "easeOutCirc",
+              });
 
               setTimeout(() => {
-                changePageFunc(true);
-              }, 1050);
+                navigate("/login");
+              }, 1000);
             }}
           >
-            Login
-          </button>
+            Log in
+          </div>
         </div>
       </form>
-    </>
+    </div>
   );
 }
