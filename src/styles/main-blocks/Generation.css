@@ -102,7 +102,7 @@
   width: 150px;
 }
 .option-input:nth-last-child(1) > .custom-select > .dropdown {
-  width: 170px;
+  width: 180px;
   left: 40%;
 }
 .option-input > .custom-select > .dropdown {

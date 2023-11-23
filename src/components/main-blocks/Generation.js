@@ -58,11 +58,13 @@ export default function Generation() {
               <CustomSelect
                 defaultName={"Type"}
                 optionList={[
-                  "Starters",
-                  "Side Dishes",
-                  "Main Course",
-                  "Salads",
-                  "Desert",
+                  "Appetizers",
+                  "Vegetable salads",
+                  "Meat salads",
+                  "Soups",
+                  "Meat dishes",
+                  "Fish dishes",
+                  "Desserts",
                 ]}
               />
               <p className="dishes-types">Type of dishes</p>

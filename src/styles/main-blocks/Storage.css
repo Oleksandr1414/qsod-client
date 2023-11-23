@@ -105,7 +105,7 @@
 
   border-radius: 50%;
 
-  transition: background-color 0.3s, stroke 0.3s;
+  transition: background-color 0.3s;
 }
 .dishes-generation-button > button:hover > svg {
   background-color: #fff;
@@ -115,6 +115,8 @@
 }
 .dishes-generation-button > button > svg > path {
   stroke: #fff;
+
+  transition: stroke 0.3s;
 }
 .dishes-generation-button > svg {
   position: absolute;
@@ -191,10 +193,12 @@ button.add > svg {
 
   border-radius: 50%;
 
-  transition: background-color 0.3s, stroke 0.3s;
+  transition: background-color 0.3s;
 }
 button.add > svg > path {
   stroke: #fff;
+
+  transition: stroke 0.3s;
 }
 button.add:hover > svg {
   background-color: #fff;
