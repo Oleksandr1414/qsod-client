@@ -1,104 +1,177 @@
 .recipe-block {
+  position: relative;
+
+  width: 260px;
+  height: 200px;
+
   border-radius: var(--border-radius-small);
-  border: 2px solid transparent;
 
   background-color: #fff;
 
   overflow: hidden;
-}
-.recipe-block:hover {
-  border: 2px solid #79ac78;
 
   cursor: pointer;
 }
+.recipe-block:hover > img {
+  size: 110%;
+}
 
-.recipe-block .recipe-image {
+.recipe-image {
   position: relative;
 
   width: 100%;
-  height: 200px;
+  height: 100%;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   background-color: #79ac78;
-  border-radius: 0 0 var(--border-radius-small) var(--border-radius-small);
+  border-radius: var(--border-radius-small);
+  border-top-right-radius: 24px;
 
   overflow: hidden;
 }
-.recipe-block .recipe-image > img {
+.recipe-image > img {
   width: 100%;
-  height: auto;
+  height: 100%;
+
+  object-fit: cover;
 }
-
-.recipe-block .recipe-info {
-  padding: 10px 10px 20px 10px;
-
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.recipe-block .recipe-likes {
+.recipe-likes {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  top: 10px;
+  left: 10px;
 
-  width: 60px;
+  width: max-content;
   height: 25px;
+
+  padding: 0 8px 0 4px;
 
   color: #f4b400;
   font-weight: 300;
 
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
+  gap: 2px;
 
   border-radius: var(--border-radius-ultra-small);
 
   background-color: #fff;
 }
-.recipe-block .recipe-likes > svg {
+.recipe-likes > svg {
   width: 21px;
   height: 21px;
 }
-.recipe-block .recipe-likes > svg > path {
+.recipe-likes > svg > path {
   stroke: #f4b400;
 }
 
-.recipe-block .recipe-time {
+.recipe-time {
   position: absolute;
-  bottom: 10px;
-  right: 75px;
+  top: 40px;
+  left: 10px;
 
-  width: 70px;
+  width: max-content;
   height: 25px;
+
+  padding: 0 8px 0 4px;
 
   color: #00abf4;
   font-weight: 300;
 
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
-  gap: 3px;
+  gap: 2px;
 
   border-radius: var(--border-radius-ultra-small);
 
   background-color: #fff;
 }
-.recipe-block .recipe-time > svg {
+.recipe-time > svg {
   width: 21px;
   height: 21px;
 }
-.recipe-block .recipe-time > svg > path {
+.recipe-time > svg > path {
   stroke: #00abf4;
 }
 
-.recipe-block .recipe-name {
-  font-size: 1.2rem;
-  font-weight: 600;
+.recipe-block > svg {
+  position: absolute;
+
+  z-index: 1;
+
+  transform: rotate(-90deg);
 }
-.recipe-block .recipe-description {
-  color: rgb(104, 104, 104);
+.recipe-block > svg:nth-child(1) {
+  top: 0;
+  right: 50px;
+}
+.recipe-block > svg:nth-child(2) {
+  top: 50px;
+  right: 0;
+}
+
+.link-to-recipe {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  padding: 0 0 5px 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  border-radius: 0 var(--border-radius);
+
+  background-color: #fff;
+
+  cursor: pointer;
+
+  z-index: 12;
+}
+.link-to-recipe > button {
+  width: 45px;
+  height: 45px;
+
+  padding: 3px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background-color: #000;
+
+  cursor: pointer;
+}
+.link-to-recipe > button > svg {
+  width: 35px;
+  height: 35px;
+
+  padding: 3px;
+
+  border: 0;
+  border-radius: 50%;
+
+  background-color: #000;
+
+  transition: background-color 0.3s;
+}
+.link-to-recipe > button > svg > path {
+  stroke: #fff;
+
+  transition: stroke 0.3s;
+}
+.recipe-block:hover .link-to-recipe > button > svg {
+  background-color: #fff;
+}
+.recipe-block:hover .link-to-recipe > button > svg > path {
+  stroke: #000;
 }

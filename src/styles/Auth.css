@@ -25,11 +25,11 @@
 
   object-fit: cover;
   border-radius: var(--border-radius);
-  border-top-right-radius: 35px;
+  border-top-right-radius: 40px;
 }
 .sign-in > img {
   border-top-right-radius: var(--border-radius);
-  border-top-left-radius: 35px;
+  border-top-left-radius: 40px;
 }
 .back-button {
   position: absolute;
@@ -43,7 +43,7 @@
   justify-content: center;
   align-items: center;
 
-  border-radius: 0 var(--border-radius);
+  border-radius: 0 35px;
 
   background-color: #fff;
 }
@@ -87,12 +87,15 @@
 
   border-radius: var(--border-radius) 0;
 }
-.sign-in-back-button > button {
-}
-
 .auth-picture-container > svg {
   position: absolute;
+
   transform: rotate(-90deg);
+}
+.auth-picture-container > svg,
+.auth-picture-container > svg > rect {
+  width: 35px;
+  height: 35px;
 }
 .auth-picture-container > svg:nth-child(2) {
   top: 20px;
