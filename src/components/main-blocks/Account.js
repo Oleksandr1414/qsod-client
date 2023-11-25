@@ -17,9 +17,9 @@ export default function Account() {
       <div className="account-history-container">
         <p className="account-history-title">Recent dishes cooked</p>
         <div className="history-block">
-          {userData.history.slice(0, 9).map((id) =>
+          {userData.history.slice(0, 8).map((id) =>
             id ? (
-              <MiniRecipe id={id} key={id} name={id} />
+              <MiniRecipe id={id} key={id} showInfo={true} />
             ) : (
               <div
                 className="recipe-empty"

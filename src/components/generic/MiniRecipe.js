@@ -8,7 +8,7 @@ import { ReactComponent as TimeIcon } from "./../../assets/TimeIcon.svg";
 import { ReactComponent as Corner } from "./../../assets/Corner.svg";
 import { ReactComponent as SquareIcon } from "./../../assets/recipe/SquareIcon.svg";
 
-export default function MiniRecipe({ id, name }) {
+export default function MiniRecipe({ id, showInfo }) {
   const recipe = recipes[id];
 
   const navigate = useNavigate();
@@ -31,6 +31,12 @@ export default function MiniRecipe({ id, name }) {
           <TimeIcon /> 20m
         </span>
       </div>
+      {showInfo ? (
+        <div className="recipe-info">
+          <p className="recipe-name">{recipe.name}</p>
+          <p className="recipe-description">{recipe.description}</p>
+        </div>
+      ) : null}
     </div>
   );
 }
