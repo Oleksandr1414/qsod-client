@@ -40,7 +40,7 @@
 }
 .recipe-likes {
   position: absolute;
-  top: 10px;
+  bottom: 40px;
   left: 10px;
 
   width: max-content;
@@ -70,7 +70,7 @@
 
 .recipe-time {
   position: absolute;
-  top: 40px;
+  bottom: 10px;
   left: 10px;
 
   width: max-content;

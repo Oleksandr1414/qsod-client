@@ -35,7 +35,12 @@ export default function Storage() {
       </div>
       <div className="items-container">
         <div className="items-classes">
-          <ClassBlock icon={"AL"} title={"All categories"} productsCount={15} />
+          <ClassBlock
+            icon={"AL"}
+            title={"All categories"}
+            productsCount={15}
+            selected={true}
+          />
           <ClassBlock icon={"FO"} title={"Meat"} productsCount={5} />
           <ClassBlock icon={"FU"} title={"Fruits"} productsCount={10} />
           <ClassBlock icon={"MI"} title={"Milk"} productsCount={7} />
@@ -90,13 +95,13 @@ export default function Storage() {
           <div className="custom-picture-container">
             <img
               alt=""
-              src="https://www.warpaintjournal.com/wp-content/uploads/2020/08/Indian-Cuisine.jpg"
+              src="https://qph.cf2.quoracdn.net/main-qimg-c058b36cd1b52cb2d9fef42a7d9045eb-lq"
             />
           </div>
           <div className="dishes-list-container">
             <img
               alt=""
-              src="https://img.jakpost.net/c/2018/06/27/2018_06_27_48298_1530062479._large.jpg"
+              src="https://qph.cf2.quoracdn.net/main-qimg-c058b36cd1b52cb2d9fef42a7d9045eb-lq"
             />
             <div className="dishes-generation-button">
               <svg width="24" height="24" className="top-right">

@@ -5,5 +5,5 @@ export const userData = {
   date_of_birth: "20",
   gender: "female",
   country: "Ukraine",
-  history: [1, 2, 3, 4],
+  history: [1, 2, 3, 4, 5, undefined, undefined, undefined, undefined],
 };

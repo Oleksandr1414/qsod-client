@@ -1,4 +1,5 @@
 import MiniRecipe from "../generic/MiniRecipe";
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { userData } from "../../_helpers/data/user";
 
@@ -7,11 +8,20 @@ import "./../../styles/main-blocks/Home.css";
 import { ReactComponent as Corner } from "./../../assets/Corner.svg";
 import { ReactComponent as ArrowRightUp } from "./../../assets/actions/ArrowRightUp.svg";
 import { ReactComponent as DoubleTopArrow } from "./../../assets/home-page/DoubleTopArrow.svg";
+import { format } from "date-fns";
 
 export default function Home() {
   const navigate = useNavigate();
-
+  const [currentTime, setCurrentTime] = useState(new Date());
   const lastRecipiesIds = userData.history.slice(0, 1);
+
+  const currentTimeView = useMemo(() => {
+    return format(currentTime, "HH:mm:ss");
+  }, [currentTime]);
+
+  useEffect(() => {
+    setInterval(() => setCurrentTime(new Date()), 1000);
+  }, []);
 
   return (
     <div className="main-container home-container">
@@ -60,7 +70,10 @@ export default function Home() {
           alt=""
           src="https://qph.cf2.quoracdn.net/main-qimg-c058b36cd1b52cb2d9fef42a7d9045eb-lq"
         />
-        <div className="date-block">12.32.21</div>
+        <div className="date-block">
+          <p>Current time</p>
+          {currentTimeView}
+        </div>
       </div>
     </div>
   );

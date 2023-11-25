@@ -3,7 +3,7 @@ export const recipes = {
     id: 1,
     name: "Pasta with Tomato Sauce",
     image_url:
-      "https://images.immediate.co.uk/production/volatile/sites/2/2017/07/courgettes.jpg?quality=90&resize=556,505",
+      "https://qph.cf2.quoracdn.net/main-qimg-c058b36cd1b52cb2d9fef42a7d9045eb-lq",
     description: "Delicious pasta with aromatic tomato sauce.",
     ingredients: [
       { name: "pasta", quantity: "200 g" },
@@ -19,7 +19,7 @@ export const recipes = {
     id: 2,
     name: "Caesar Salad",
     image_url:
-      "https://images.immediate.co.uk/production/volatile/sites/2/2017/07/courgettes.jpg?quality=90&resize=556,505",
+      "https://qph.cf2.quoracdn.net/main-qimg-c058b36cd1b52cb2d9fef42a7d9045eb-lq",
 
     description: "Classic Caesar salad with chicken.",
     ingredients: [
@@ -36,7 +36,7 @@ export const recipes = {
     id: 3,
     name: "Grilled Salmon",
     image_url:
-      "https://images.immediate.co.uk/production/volatile/sites/2/2017/07/courgettes.jpg?quality=90&resize=556,505",
+      "https://qph.cf2.quoracdn.net/main-qimg-c058b36cd1b52cb2d9fef42a7d9045eb-lq",
 
     description: "Juicy grilled salmon with lemon and herbs.",
     ingredients: [
@@ -53,7 +53,7 @@ export const recipes = {
     id: 4,
     name: "Vegetarian Stir-Fry",
     image_url:
-      "https://images.immediate.co.uk/production/volatile/sites/2/2017/07/courgettes.jpg?quality=90&resize=556,505",
+      "https://qph.cf2.quoracdn.net/main-qimg-c058b36cd1b52cb2d9fef42a7d9045eb-lq",
 
     description: "Colorful and nutritious vegetarian stir-fry.",
     ingredients: [
@@ -70,7 +70,7 @@ export const recipes = {
     id: 5,
     name: "Homemade Pizza",
     image_url:
-      "https://images.immediate.co.uk/production/volatile/sites/2/2017/07/courgettes.jpg?quality=90&resize=556,505",
+      "https://qph.cf2.quoracdn.net/main-qimg-c058b36cd1b52cb2d9fef42a7d9045eb-lq",
 
     description: "Create your own pizza with your favorite toppings.",
     ingredients: [
@@ -87,7 +87,7 @@ export const recipes = {
     id: 6,
     name: "Chicken Noodle Soup",
     image_url:
-      "https://images.immediate.co.uk/production/volatile/sites/2/2017/07/courgettes.jpg?quality=90&resize=556,505",
+      "https://qph.cf2.quoracdn.net/main-qimg-c058b36cd1b52cb2d9fef42a7d9045eb-lq",
 
     description: "Comforting chicken noodle soup for any day.",
     ingredients: [
@@ -104,7 +104,7 @@ export const recipes = {
     id: 7,
     name: "Shrimp Scampi",
     image_url:
-      "https://images.immediate.co.uk/production/volatile/sites/2/2017/07/courgettes.jpg?quality=90&resize=556,505",
+      "https://qph.cf2.quoracdn.net/main-qimg-c058b36cd1b52cb2d9fef42a7d9045eb-lq",
 
     description: "Garlicky shrimp scampi with a hint of lemon.",
     ingredients: [
@@ -121,7 +121,7 @@ export const recipes = {
     id: 8,
     name: "Caprese Salad",
     image_url:
-      "https://images.immediate.co.uk/production/volatile/sites/2/2017/07/courgettes.jpg?quality=90&resize=556,505",
+      "https://qph.cf2.quoracdn.net/main-qimg-c058b36cd1b52cb2d9fef42a7d9045eb-lq",
 
     description:
       "Light and refreshing Caprese salad with tomatoes and mozzarella.",
@@ -138,7 +138,7 @@ export const recipes = {
     id: 9,
     name: "Beef Stir-Fry",
     image_url:
-      "https://images.immediate.co.uk/production/volatile/sites/2/2017/07/courgettes.jpg?quality=90&resize=556,505",
+      "https://qph.cf2.quoracdn.net/main-qimg-c058b36cd1b52cb2d9fef42a7d9045eb-lq",
 
     description: "Quick and flavorful beef stir-fry with vegetables.",
     ingredients: [
@@ -155,7 +155,7 @@ export const recipes = {
     id: 10,
     name: "Chocolate Chip Cookies",
     image_url:
-      "https://images.immediate.co.uk/production/volatile/sites/2/2017/07/courgettes.jpg?quality=90&resize=556,505",
+      "https://qph.cf2.quoracdn.net/main-qimg-c058b36cd1b52cb2d9fef42a7d9045eb-lq",
 
     description: "Classic chocolate chip cookies for a sweet treat.",
     ingredients: [

@@ -33,7 +33,7 @@ export default function Generation() {
     <div className="main-container generation-container">
       <div className="generation-options-container">
         <img
-          src="https://www.ulcdn.net/media/collection%20and%20listing/Provides_additional_breathing_room.jpg?1690286896"
+          src="https://qph.cf2.quoracdn.net/main-qimg-c058b36cd1b52cb2d9fef42a7d9045eb-lq"
           alt=""
         />
         <p className="generation-options-title letters">Generate recipes</p>

@@ -9,7 +9,7 @@ import { ReactComponent as TimeIcon } from "./../../assets/TimeIcon.svg";
 import { ReactComponent as Corner } from "./../../assets/Corner.svg";
 import { ReactComponent as SquareIcon } from "./../../assets/recipe/SquareIcon.svg";
 
-export default function MiniRecipe({ id }) {
+export default function MiniRecipe({ id, name }) {
   const recipe = recipes[id];
 
   const navigate = useNavigate();
