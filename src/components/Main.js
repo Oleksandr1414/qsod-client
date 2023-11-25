@@ -1,4 +1,5 @@
 import Account from "./main-blocks/Account";
+import FullRecipe from "./generic/FullRecipe";
 import Generation from "./main-blocks/Generation";
 import Header from "./nav-bar/Header";
 import Home from "./main-blocks/Home";
@@ -23,6 +24,9 @@ export default function Main() {
     }
     if (pathname === "/account") {
       return <Account />;
+    }
+    if (pathname.includes("/recipe")) {
+      return <FullRecipe />;
     }
 
     return <></>;

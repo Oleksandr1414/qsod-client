@@ -27,7 +27,7 @@ const router = createBrowserRouter([
   { path: "/storage", element: <Main /> },
   { path: "/generation", element: <Main /> },
 
-  { path: "/recipe", element: <Error /> },
+  { path: "/recipe", element: <Main /> },
   { path: "/recipe/*", element: <Main /> },
 
   { path: "/loading", element: <Home /> }, //Loading

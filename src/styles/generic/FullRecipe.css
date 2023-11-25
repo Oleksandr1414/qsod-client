@@ -1,0 +1,9 @@
+.recipe-container {
+  width: 100%;
+  height: calc(100svh - 70px);
+
+  margin-top: 70px;
+  padding: 20px;
+
+  /* background-color: red; */
+}
