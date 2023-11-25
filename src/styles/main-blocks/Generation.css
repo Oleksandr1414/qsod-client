@@ -41,9 +41,10 @@
 .generation-options-title {
   margin-top: -80px;
 
+  font-family: "Quattrocento", serif;
   font-size: 4rem;
   line-height: 5rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .generation-options-subtitle {

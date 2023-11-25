@@ -80,7 +80,7 @@
   flex: 1;
 }
 .recipe-controller {
-  height: auto;
+  height: 100px;
 }
 .recipe-more {
   flex: 1;
@@ -131,6 +131,8 @@
   font-weight: 500;
 }
 .recipe-header {
+  font-family: "Quattrocento", serif;
+
   font-size: 3rem;
   text-align: center;
 }
