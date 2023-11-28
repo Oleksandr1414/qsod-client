@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-import "./../../styles/custom-elements/SelectElement.css";
+import "./../../styles/elements/SelectElement.css";
 
 import { ReactComponent as Arrow } from "./../../assets/actions/ArrowDown.svg";
 

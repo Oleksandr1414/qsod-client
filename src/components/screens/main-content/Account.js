@@ -2,7 +2,7 @@ import MiniRecipeElement from "../../elements/MiniRecipeElement.js";
 import { userData } from "../../../_helpers/data/user.js";
 import { useNavigate } from "react-router-dom";
 
-import "./../../../styles/main-blocks/Account.css";
+import "./../../../styles/screens/main-content/Account.css";
 
 import { ReactComponent as UserIcon } from "./../../../assets/UserIcon.svg";
 import { ReactComponent as MaleIcon } from "./../../../assets/genders/MaleIcon.svg";

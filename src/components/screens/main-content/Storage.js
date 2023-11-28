@@ -4,7 +4,7 @@ import FoodElement from "../../elements/FoodElement";
 import ClassBlockElement from "../../elements/ClassBlockElement";
 import { useNavigate } from "react-router-dom";
 
-import "./../../../styles/main-blocks/Storage.css";
+import "./../../../styles/screens//main-content/Storage.css";
 
 import { ReactComponent as Add } from "./../../../assets/actions/Add.svg";
 import { ReactComponent as ArrowRightUp } from "./../../../assets/actions/ArrowRightUp.svg";

@@ -2,7 +2,7 @@ import { recipes } from "../../../_helpers/data/recipes";
 import { useLocation } from "react-router-dom";
 import { useMemo, useState } from "react";
 
-import "./../../../styles/generic/Recipe.css";
+import "./../../../styles/screens/main-content/Recipe.css";
 
 import { ReactComponent as Play } from "./../../../assets/actions/Play.svg";
 import { ReactComponent as Stop } from "./../../../assets/actions/Stop.svg";

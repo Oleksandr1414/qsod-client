@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { recipes } from "../../_helpers/data/recipes";
 
-import "./../../styles/generic/MiniRecipeElement.css";
+import "./../../styles/elements/MiniRecipeElement.css";
 
 import { ReactComponent as LikeIcon } from "./../../assets/LikeIcon.svg";
 import { ReactComponent as TimeIcon } from "./../../assets/TimeIcon.svg";

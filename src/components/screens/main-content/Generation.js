@@ -1,7 +1,7 @@
 import anime from "animejs";
 import SelectElement from "../../elements/SelectElement";
 
-import "./../../../styles/main-blocks/Generation.css";
+import "./../../../styles/screens/main-content/Generation.css";
 
 import { ReactComponent as MagniferIcon } from "./../../../assets/generation/MagniferIcon.svg";
 

@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { userData } from "../../../_helpers/data/user";
 
-import "./../../../styles/main-blocks/Home.css";
+import "./../../../styles/screens//main-content/Home.css";
 
 import { ReactComponent as Corner } from "./../../../assets/Corner.svg";
 import { ReactComponent as ArrowRightUp } from "./../../../assets/actions/ArrowRightUp.svg";

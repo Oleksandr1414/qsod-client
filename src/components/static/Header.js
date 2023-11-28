@@ -1,7 +1,7 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { userData } from "../../_helpers/data/user";
 
-import "./../../styles/Header.css";
+import "./../../styles/static/Header.css";
 
 import logo from "./../../assets/images/logo.png";
 
@@ -10,8 +10,11 @@ import { ReactComponent as UserIcon } from "./../../assets/home-page/UserIcon.sv
 import { ReactComponent as LogoutIcon } from "./../../assets/home-page/LogoutIcon.svg";
 
 export default function Header() {
+  const navigate = useNavigate();
+
   const sendLogout = (event) => {
     event.preventDefault();
+    navigate("/");
   };
 
   return (
