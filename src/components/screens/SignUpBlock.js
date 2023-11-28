@@ -1,3 +1,4 @@
+import CornerElement from "../elements/CornerElement";
 import anime from "animejs";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -5,10 +6,9 @@ import { useNavigate } from "react-router-dom";
 import { ReactComponent as BackButton } from "./../../assets/BackButton.svg";
 import { ReactComponent as MaleIcon } from "./../../assets/genders/MaleIcon.svg";
 import { ReactComponent as FemaleIcon } from "./../../assets/genders/FemaleIcon.svg";
-import { ReactComponent as Corner } from "./../../assets/Corner.svg";
 import { ReactComponent as AddUserIcon } from "./../../assets/auth-page/AddUserIcon.svg";
 
-export default function SignUpBlock({ refs: { signInRef, signUnRef } }) {
+export default function SignUpBlock({ refs: { signInRef, signUpRef } }) {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -29,14 +29,14 @@ export default function SignUpBlock({ refs: { signInRef, signUnRef } }) {
   }, []);
 
   return (
-    <div className="sign-up d-flex p-20 gap-20">
+    <div ref={signUpRef} className="sign-up d-none p-20 gap-20">
       <div className="sign-up__picture flex-1">
         <img
           src="https://qph.cf2.quoracdn.net/main-qimg-c058b36cd1b52cb2d9fef42a7d9045eb-lq"
           alt="sign-up__picture"
         />
-        <Corner className="corner-svg" />
-        <Corner className="corner-svg" />
+        <CornerElement />
+        <CornerElement />
         <div className="sign-up__back-btn-block">
           <button onClick={() => navigate("/")}>
             <BackButton />
@@ -95,7 +95,10 @@ export default function SignUpBlock({ refs: { signInRef, signUnRef } }) {
               // });
 
               setTimeout(() => {
-                navigate("/authorization");
+                signInRef.current.className =
+                  signInRef.current.className.replace("d-none", "d-flex");
+                signUpRef.current.className =
+                  signUpRef.current.className.replace("d-flex", "d-none");
               }, 1000);
             }}
           >

@@ -34,7 +34,7 @@ export default function MainContent() {
   return (
     <>
       <Header />
-      <main>{mainComponentsView}</main>
+      {mainComponentsView}
     </>
   );
 }

@@ -1,12 +1,12 @@
+import CornerElement from "../elements/CornerElement";
 import anime from "animejs";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { ReactComponent as BackButton } from "./../../assets/BackButton.svg";
-import { ReactComponent as Corner } from "./../../assets/Corner.svg";
 import { ReactComponent as LoginIcon } from "./../../assets/auth-page/LoginIcon.svg";
 
-export default function SignInBlock({ refs: { signInRef, signUnRef } }) {
+export default function SignInBlock({ refs: { signInRef, signUpRef } }) {
   const navigate = useNavigate();
 
   // useEffect(() => {
@@ -27,7 +27,7 @@ export default function SignInBlock({ refs: { signInRef, signUnRef } }) {
   // }, []);
 
   return (
-    <div className="sign-in d-flex p-20 gap-20">
+    <div ref={signInRef} className="sign-in d-flex p-20 gap-20">
       <form className="sign-in__form d-flex fdc jcc aic gap-10 flex-1">
         <p className="form__title mb-20">Login to your account</p>
         <input id="email" type="email" placeholder="Type your email.." />
@@ -56,7 +56,10 @@ export default function SignInBlock({ refs: { signInRef, signUnRef } }) {
               // });
 
               setTimeout(() => {
-                navigate("/authorization");
+                signUpRef.current.className =
+                  signUpRef.current.className.replace("d-none", "d-flex");
+                signInRef.current.className =
+                  signInRef.current.className.replace("d-flex", "d-none");
               }, 1000);
             }}
           >
@@ -69,8 +72,8 @@ export default function SignInBlock({ refs: { signInRef, signUnRef } }) {
           src="https://qph.cf2.quoracdn.net/main-qimg-c058b36cd1b52cb2d9fef42a7d9045eb-lq"
           alt="sign-in__picture"
         />
-        <Corner className="corner-svg" />
-        <Corner className="corner-svg" />
+        <CornerElement />
+        <CornerElement />
         <div className="sign-in__back-btn-block">
           <button onClick={() => navigate("/")}>
             <BackButton />
