@@ -9,22 +9,22 @@ import { ReactComponent as LoginIcon } from "./../../assets/auth-page/LoginIcon.
 export default function SignInBlock({ refs: { signInRef, signUpRef } }) {
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   anime({
-  //     targets: ".auth-picture-container",
-  //     opacity: [0, 1],
-  //     translateY: [100, 0],
-  //     duration: 1000,
-  //     easing: "easeOutCirc",
-  //   });
-  //   anime({
-  //     targets: ".login-form",
-  //     opacity: [0, 1],
-  //     translateY: [-100, 0],
-  //     duration: 1000,
-  //     easing: "easeOutCirc",
-  //   });
-  // }, []);
+  useEffect(() => {
+    anime({
+      targets: ".sign-in__picture",
+      opacity: [0, 1],
+      translateY: [100, 0],
+      duration: 1000,
+      easing: "easeOutCirc",
+    });
+    anime({
+      targets: ".sign-in__form",
+      opacity: [0, 1],
+      translateY: [-100, 0],
+      duration: 1000,
+      easing: "easeOutCirc",
+    });
+  }, []);
 
   return (
     <div ref={signInRef} className="sign-in d-flex p-20 gap-20">
@@ -40,20 +40,20 @@ export default function SignInBlock({ refs: { signInRef, signUpRef } }) {
           New to App?&nbsp;
           <span
             onClick={() => {
-              // anime({
-              //   targets: ".login-form",
-              //   opacity: [1, 0],
-              //   translateY: [0, 100],
-              //   duration: 1000,
-              //   easing: "easeOutCirc",
-              // });
-              // anime({
-              //   targets: ".auth-picture-container",
-              //   opacity: [1, 0],
-              //   translateY: [0, -100],
-              //   duration: 1000,
-              //   easing: "easeOutCirc",
-              // });
+              anime({
+                targets: ".sign-in__form",
+                opacity: [1, 0],
+                translateY: [0, 100],
+                duration: 1000,
+                easing: "easeOutCirc",
+              });
+              anime({
+                targets: ".sign-in__picture",
+                opacity: [1, 0],
+                translateY: [0, -100],
+                duration: 1000,
+                easing: "easeOutCirc",
+              });
 
               setTimeout(() => {
                 signUpRef.current.className =

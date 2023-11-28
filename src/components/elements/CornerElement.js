@@ -1,5 +1,9 @@
-import { ReactComponent as Corner } from "./../../assets/Corner.svg";
+import CornerPng from "./../../assets/images/WhiteCorner.png";
 
 export default function CornerElement() {
-  return <Corner className="corner-svg" />;
+  return (
+    <div className="corner-element">
+      <img alt="corner-element" src={CornerPng} />
+    </div>
+  );
 }

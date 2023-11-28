@@ -12,20 +12,20 @@ export default function SignUpBlock({ refs: { signInRef, signUpRef } }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // anime({
-    //   targets: ".auth-picture-container",
-    //   opacity: [0, 1],
-    //   translateY: [-100, 0],
-    //   duration: 1000,
-    //   easing: "easeOutCirc",
-    // });
-    // anime({
-    //   targets: ".login-form",
-    //   opacity: [0, 1],
-    //   translateY: [100, 0],
-    //   duration: 1000,
-    //   easing: "easeOutCirc",
-    // });
+    anime({
+      targets: ".sign-up__picture",
+      opacity: [0, 1],
+      translateY: [-100, 0],
+      duration: 1000,
+      easing: "easeOutCirc",
+    });
+    anime({
+      targets: ".sign-up__form",
+      opacity: [0, 1],
+      translateY: [100, 0],
+      duration: 1000,
+      easing: "easeOutCirc",
+    });
   }, []);
 
   return (
@@ -79,26 +79,26 @@ export default function SignUpBlock({ refs: { signInRef, signUpRef } }) {
           Already have an account?&nbsp;
           <span
             onClick={() => {
-              // anime({
-              //   targets: ".auth-picture-container",
-              //   opacity: [1, 0],
-              //   translateY: [0, 100],
-              //   duration: 1000,
-              //   easing: "easeOutCirc",
-              // });
-              // anime({
-              //   targets: ".login-form",
-              //   opacity: [1, 0],
-              //   translateY: [0, -100],
-              //   duration: 1000,
-              //   easing: "easeOutCirc",
-              // });
+              anime({
+                targets: ".sign-up__picture",
+                opacity: [1, 0],
+                translateY: [0, 100],
+                duration: 1000,
+                easing: "easeOutCirc",
+              });
+              anime({
+                targets: ".sign-up__form",
+                opacity: [1, 0],
+                translateY: [0, -100],
+                duration: 1000,
+                easing: "easeOutCirc",
+              });
 
               setTimeout(() => {
-                signInRef.current.className =
-                  signInRef.current.className.replace("d-none", "d-flex");
                 signUpRef.current.className =
                   signUpRef.current.className.replace("d-flex", "d-none");
+                signInRef.current.className =
+                  signInRef.current.className.replace("d-none", "d-flex");
               }, 1000);
             }}
           >

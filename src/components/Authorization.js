@@ -1,8 +1,9 @@
-import { useRef } from "react";
-import SignInBlock from "./screens/SignInBlock";
-import SignUpBlock from "./screens/SignUpBlock";
+import React, { useRef } from "react";
 
 import "./../styles/Authorization.css";
+
+const SignInBlock = React.lazy(() => import("./screens/SignInBlock"));
+const SignUpBlock = React.lazy(() => import("./screens/SignUpBlock"));
 
 export default function Auth() {
   const signInBlockRef = useRef(null);

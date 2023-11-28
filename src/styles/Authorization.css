@@ -30,36 +30,32 @@
   border-top-left-radius: 40px;
 }
 
-.sign-in__picture > .corner-svg,
-.sign-up__picture > .corner-svg {
+.sign-in__picture > .corner-element,
+.sign-up__picture > .corner-element {
   position: absolute;
+
+  width: 35px;
+  height: 35px;
 
   transform: rotate(-90deg);
 }
-.sign-in__picture > .corner-svg,
-.sign-up__picture > .corner-svg,
-.sign-in__picture > .corner-svg > rect,
-.sign-up__picture > .corner-svg > rect {
-  width: 35px;
-  height: 35px;
-}
-.sign-in__picture > .corner-svg:nth-child(2) {
+.sign-in__picture > .corner-element:nth-child(2) {
   top: 0;
   right: 68px;
 }
-.sign-in__picture > .corner-svg:nth-child(3) {
+.sign-in__picture > .corner-element:nth-child(3) {
   top: 68px;
   right: 0;
 }
 
-.sign-up__picture > .corner-svg {
+.sign-up__picture > .corner-element {
   transform: rotate(180deg);
 }
-.sign-up__picture > .corner-svg:nth-child(2) {
+.sign-up__picture > .corner-element:nth-child(2) {
   top: 0;
   left: 68px;
 }
-.sign-up__picture > .corner-svg:nth-child(3) {
+.sign-up__picture > .corner-element:nth-child(3) {
   top: 68px;
   left: 0;
 }
