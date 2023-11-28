@@ -3,7 +3,8 @@ import { userData } from "../../_helpers/data/user";
 
 import "./../../styles/Header.css";
 
-import logo from "./../../assets/logo.png";
+import logo from "./../../assets/images/logo.png";
+
 import { ReactComponent as HomeIcon } from "./../../assets/home-page/HomeIcon.svg";
 import { ReactComponent as UserIcon } from "./../../assets/home-page/UserIcon.svg";
 import { ReactComponent as LogoutIcon } from "./../../assets/home-page/LogoutIcon.svg";

@@ -1,20 +1,20 @@
-import CustomDatalist from "../custom-select/CustomDatalist";
-import CustomSelect from "../custom-select/CustomSelect";
-import FoodBlock from "./storage/FoodBlock";
-import ClassBlock from "./storage/ClassBlock";
+import DatalistElement from "../../elements/DatalistElement";
+import SelectElement from "../../elements/SelectElement";
+import FoodElement from "../../elements/FoodElement";
+import ClassBlockElement from "../../elements/ClassBlockElement";
 import { useNavigate } from "react-router-dom";
 
-import "../../styles/main-blocks/Storage.css";
+import "./../../../styles/main-blocks/Storage.css";
 
-import { ReactComponent as Add } from "./../../assets/actions/Add.svg";
-import { ReactComponent as ArrowRightUp } from "./../../assets/actions/ArrowRightUp.svg";
+import { ReactComponent as Add } from "./../../../assets/actions/Add.svg";
+import { ReactComponent as ArrowRightUp } from "./../../../assets/actions/ArrowRightUp.svg";
 
 export default function Storage() {
   const navigate = useNavigate();
   return (
     <div className="main-container storage-container">
       <div className="items-navigation-container">
-        <CustomSelect
+        <SelectElement
           defaultName={"Class"}
           optionList={[
             "Meat",
@@ -25,7 +25,7 @@ export default function Storage() {
             "Vegetables",
           ]}
         />
-        <CustomDatalist dataList={["Pork", "Chicken", "Veal", "Neck"]} />
+        <DatalistElement dataList={["Pork", "Chicken", "Veal", "Neck"]} />
 
         <input placeholder="Amount" />
 
@@ -35,15 +35,15 @@ export default function Storage() {
       </div>
       <div className="items-container">
         <div className="items-classes">
-          <ClassBlock
+          <ClassBlockElement
             icon={"AL"}
             title={"All categories"}
             productsCount={15}
             selected={true}
           />
-          <ClassBlock icon={"FO"} title={"Meat"} productsCount={5} />
-          <ClassBlock icon={"FU"} title={"Fruits"} productsCount={10} />
-          <ClassBlock icon={"MI"} title={"Milk"} productsCount={7} />
+          <ClassBlockElement icon={"FO"} title={"Meat"} productsCount={5} />
+          <ClassBlockElement icon={"FU"} title={"Fruits"} productsCount={10} />
+          <ClassBlockElement icon={"MI"} title={"Milk"} productsCount={7} />
         </div>
         <div className="items-list">
           <div className="items-list-header">
@@ -56,38 +56,78 @@ export default function Storage() {
           <div className="items-list-scroll">
             <>
               <p className="class-header">Meat (5)</p>
-              <FoodBlock id={"1A3BDC6"} img={"AL"} name={"Pork"} amount={300} />
-              <FoodBlock
+              <FoodElement
+                id={"1A3BDC6"}
+                img={"AL"}
+                name={"Pork"}
+                amount={300}
+              />
+              <FoodElement
                 id={"1A3BDC7"}
                 img={"CH"}
                 name={"Chicken"}
                 amount={1100}
               />
-              <FoodBlock id={"1A3BDC8"} img={"VE"} name={"Veal"} amount={250} />
+              <FoodElement
+                id={"1A3BDC8"}
+                img={"VE"}
+                name={"Veal"}
+                amount={250}
+              />
             </>
             <>
               <p className="class-header">Fruits (10)</p>
-              <FoodBlock id={"1A3BDC6"} img={"AL"} name={"Pork"} amount={110} />
-              <FoodBlock
+              <FoodElement
+                id={"1A3BDC6"}
+                img={"AL"}
+                name={"Pork"}
+                amount={110}
+              />
+              <FoodElement
                 id={"1A3BDC7"}
                 img={"VE"}
                 name={"Chicken"}
                 amount={250}
               />
-              <FoodBlock id={"1A3BDC8"} img={"VE"} name={"Veal"} amount={300} />
-              <FoodBlock id={"1A3BDC8"} img={"VE"} name={"Veal"} amount={420} />
+              <FoodElement
+                id={"1A3BDC8"}
+                img={"VE"}
+                name={"Veal"}
+                amount={300}
+              />
+              <FoodElement
+                id={"1A3BDC8"}
+                img={"VE"}
+                name={"Veal"}
+                amount={420}
+              />
             </>
             <>
               <p className="class-header">Milk (5)</p>
-              <FoodBlock id={"1A3BDC6"} img={"AL"} name={"Pork"} amount={140} />
-              <FoodBlock id={"1A3BDC8"} img={"VE"} name={"Veal"} amount={420} />
-              <FoodBlock
+              <FoodElement
+                id={"1A3BDC6"}
+                img={"AL"}
+                name={"Pork"}
+                amount={140}
+              />
+              <FoodElement
+                id={"1A3BDC8"}
+                img={"VE"}
+                name={"Veal"}
+                amount={420}
+              />
+              <FoodElement
                 id={"1A3BDC6"}
                 img={"CO"}
                 name={"Pork"}
                 amount={1420}
               />
-              <FoodBlock id={"1A3BDC8"} img={"AF"} name={"Veal"} amount={420} />
+              <FoodElement
+                id={"1A3BDC8"}
+                img={"AF"}
+                name={"Veal"}
+                amount={420}
+              />
             </>
           </div>
         </div>

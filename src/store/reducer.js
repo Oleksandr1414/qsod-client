@@ -7,7 +7,6 @@ const appReducer = combineReducers({
 
 const rootReducer = (state, action) => {
   if (action.type === "RESET_STORE") {
-    //cleanup
   }
 
   return appReducer(state, action);

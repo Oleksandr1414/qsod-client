@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export default function CustomDatalist({ dataList }) {
+export default function DatalistElement({ dataList }) {
   const nameInput = useRef();
   const nameDataList = useRef();
 

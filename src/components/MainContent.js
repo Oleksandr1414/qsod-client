@@ -1,13 +1,13 @@
-import Account from "./main-blocks/Account";
-import FullRecipe from "./generic/FullRecipe";
-import Generation from "./main-blocks/Generation";
-import Header from "./nav-bar/Header";
-import Home from "./main-blocks/Home";
-import Storage from "./main-blocks/Storage";
+import Account from "./screens/main-content/Account";
+import Generation from "./screens/main-content/Generation";
+import Header from "./static/Header";
+import Home from "./screens/main-content/Home";
+import Recipe from "./screens/main-content/Recipe";
+import Storage from "./screens/main-content/Storage";
 import { useLocation } from "react-router-dom";
 import { useMemo } from "react";
 
-export default function Main() {
+export default function MainContent() {
   const location = useLocation();
 
   const mainComponentsView = useMemo(() => {
@@ -26,7 +26,7 @@ export default function Main() {
       return <Account />;
     }
     if (pathname.includes("/recipe")) {
-      return <FullRecipe />;
+      return <Recipe />;
     }
 
     return <></>;

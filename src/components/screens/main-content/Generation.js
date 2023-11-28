@@ -1,9 +1,9 @@
 import anime from "animejs";
+import SelectElement from "../../elements/SelectElement";
 
-import "./../../styles/main-blocks/Generation.css";
+import "./../../../styles/main-blocks/Generation.css";
 
-import { ReactComponent as MagniferIcon } from "./../../assets/generation/MagniferIcon.svg";
-import CustomSelect from "../custom-select/CustomSelect";
+import { ReactComponent as MagniferIcon } from "./../../../assets/generation/MagniferIcon.svg";
 
 export default function Generation() {
   // anime({
@@ -43,7 +43,7 @@ export default function Generation() {
         <div className="option-block">
           <div className="option-inputs">
             <div className="option-input">
-              <CustomSelect
+              <SelectElement
                 defaultName={"Time"}
                 optionList={[
                   "Less than 20 minutes",
@@ -55,7 +55,7 @@ export default function Generation() {
             </div>
             <div className="vertical-line"></div>
             <div className="option-input">
-              <CustomSelect
+              <SelectElement
                 defaultName={"Type"}
                 optionList={[
                   "Appetizers",

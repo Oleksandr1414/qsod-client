@@ -282,6 +282,7 @@ button.add:hover > svg > path {
   border-radius: var(--border-radius-small);
 
   background-color: #fff;
+
   cursor: pointer;
 }
 .wrapper-dropdown .dropdown {

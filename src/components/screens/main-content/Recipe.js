@@ -1,14 +1,14 @@
-import { useMemo, useState } from "react";
-import { recipes } from "../../_helpers/data/recipes";
+import { recipes } from "../../../_helpers/data/recipes";
 import { useLocation } from "react-router-dom";
+import { useMemo, useState } from "react";
 
-import "./../../styles/generic/FullRecipe.css";
+import "./../../../styles/generic/Recipe.css";
 
-import { ReactComponent as Play } from "./../../assets/actions/Play.svg";
-import { ReactComponent as Stop } from "./../../assets/actions/Stop.svg";
-import { ReactComponent as TimeIcon } from "./../../assets/TimeIcon.svg";
+import { ReactComponent as Play } from "./../../../assets/actions/Play.svg";
+import { ReactComponent as Stop } from "./../../../assets/actions/Stop.svg";
+import { ReactComponent as TimeIcon } from "./../../../assets/TimeIcon.svg";
 
-export default function FullRecipe() {
+export default function Recipe() {
   const [isImerStart, setIsImerStart] = useState(false);
   const { pathname } = useLocation();
 

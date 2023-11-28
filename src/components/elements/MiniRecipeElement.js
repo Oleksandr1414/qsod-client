@@ -1,14 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import { recipes } from "../../_helpers/data/recipes";
 
-import "./../../styles/generic/MiniRecipe.css";
+import "./../../styles/generic/MiniRecipeElement.css";
 
 import { ReactComponent as LikeIcon } from "./../../assets/LikeIcon.svg";
 import { ReactComponent as TimeIcon } from "./../../assets/TimeIcon.svg";
 import { ReactComponent as Corner } from "./../../assets/Corner.svg";
 import { ReactComponent as SquareIcon } from "./../../assets/recipe/SquareIcon.svg";
 
-export default function MiniRecipe({ id, showInfo }) {
+export default function MiniRecipeElement({ id, showInfo }) {
   const recipe = recipes[id];
 
   const navigate = useNavigate();

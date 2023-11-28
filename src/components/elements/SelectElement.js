@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from "react";
 
-import "./../../styles/custom-elements/CustomSelect.css";
+import "./../../styles/custom-elements/SelectElement.css";
 
 import { ReactComponent as Arrow } from "./../../assets/actions/ArrowDown.svg";
 
-export default function CustomSelect({ optionList, defaultName }) {
+export default function SelectElement({ optionList, defaultName }) {
   const activeDropdown = useRef(null);
 
   function closeAllDropdowns() {
@@ -69,7 +69,7 @@ export default function CustomSelect({ optionList, defaultName }) {
     <div
       ref={activeDropdown}
       onClick={dropDownOnClick}
-      className="custom-select wrapper-dropdown"
+      className="elements wrapper-dropdown"
       id="dropdown"
     >
       <span className="selected-display" id="destination">

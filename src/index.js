@@ -1,11 +1,10 @@
-import App from "./components/App";
-import Error from "./components/Error";
-import Home from "./components/main-blocks/Home";
-import Login from "./components/auth-blocks/Login";
-import Main from "./components/Main";
+import App from "./App";
+import Auth from "./components/Authorization";
+import Error from "./components/static/Error";
+import Home from "./components/screens/main-content/Home";
+import MainContent from "./components/MainContent";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import SignUp from "./components/auth-blocks/SignUp";
 import store from "./store/store";
 import { Provider } from "react-redux";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
@@ -14,23 +13,18 @@ import "./styles/GlobalParams.css";
 import "./styles/themes/DefaultTheme.css";
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    // loader: rootLoader,
-  },
-  { path: "/login", element: <Login /> },
-  { path: "/signup", element: <SignUp /> },
+  { path: "/", element: <App /> },
+  { path: "/authorization", element: <Auth /> },
 
-  { path: "/home", element: <Main /> },
-  { path: "/account", element: <Main /> },
-  { path: "/storage", element: <Main /> },
-  { path: "/generation", element: <Main /> },
+  { path: "/home", element: <MainContent /> },
+  { path: "/account", element: <MainContent /> },
+  { path: "/storage", element: <MainContent /> },
+  { path: "/generation", element: <MainContent /> },
 
-  { path: "/recipe", element: <Main /> },
-  { path: "/recipe/*", element: <Main /> },
+  { path: "/recipe", element: <MainContent /> },
+  { path: "/recipe/*", element: <MainContent /> },
 
-  { path: "/loading", element: <Home /> }, //Loading
+  { path: "/loading", element: <Home /> },
   { path: "/*", element: <Error /> },
 ]);
 

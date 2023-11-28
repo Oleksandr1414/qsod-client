@@ -1,13 +1,13 @@
-import MiniRecipe from "../generic/MiniRecipe.js";
-import { userData } from "../../_helpers/data/user.js";
+import MiniRecipeElement from "../../elements/MiniRecipeElement.js";
+import { userData } from "../../../_helpers/data/user.js";
 import { useNavigate } from "react-router-dom";
 
-import "./../../styles/main-blocks/Account.css";
+import "./../../../styles/main-blocks/Account.css";
 
-import { ReactComponent as UserIcon } from "./../../assets/UserIcon.svg";
-import { ReactComponent as MaleIcon } from "./../../assets/genders/MaleIcon.svg";
-import { ReactComponent as FemaleIcon } from "./../../assets/genders/FemaleIcon.svg";
-import { ReactComponent as BuildingIcon } from "./../../assets/home-page/BuildingIcon.svg";
+import { ReactComponent as UserIcon } from "./../../../assets/UserIcon.svg";
+import { ReactComponent as MaleIcon } from "./../../../assets/genders/MaleIcon.svg";
+import { ReactComponent as FemaleIcon } from "./../../../assets/genders/FemaleIcon.svg";
+import { ReactComponent as BuildingIcon } from "./../../../assets/home-page/BuildingIcon.svg";
 
 export default function Account() {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ export default function Account() {
         <div className="history-block">
           {userData.history.slice(0, 8).map((id) =>
             id ? (
-              <MiniRecipe id={id} key={id} showInfo={true} />
+              <MiniRecipeElement id={id} key={id} showInfo={true} />
             ) : (
               <div
                 className="recipe-empty"

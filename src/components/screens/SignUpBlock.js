@@ -2,55 +2,53 @@ import anime from "animejs";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import "../../styles/Auth.css";
-
 import { ReactComponent as BackButton } from "./../../assets/BackButton.svg";
 import { ReactComponent as MaleIcon } from "./../../assets/genders/MaleIcon.svg";
 import { ReactComponent as FemaleIcon } from "./../../assets/genders/FemaleIcon.svg";
 import { ReactComponent as Corner } from "./../../assets/Corner.svg";
 import { ReactComponent as AddUserIcon } from "./../../assets/auth-page/AddUserIcon.svg";
 
-export default function SignUp() {
+export default function SignUpBlock({ refs: { signInRef, signUnRef } }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    anime({
-      targets: ".auth-picture-container",
-      opacity: [0, 1],
-      translateY: [-100, 0],
-      duration: 1000,
-      easing: "easeOutCirc",
-    });
-    anime({
-      targets: ".login-form",
-      opacity: [0, 1],
-      translateY: [100, 0],
-      duration: 1000,
-      easing: "easeOutCirc",
-    });
+    // anime({
+    //   targets: ".auth-picture-container",
+    //   opacity: [0, 1],
+    //   translateY: [-100, 0],
+    //   duration: 1000,
+    //   easing: "easeOutCirc",
+    // });
+    // anime({
+    //   targets: ".login-form",
+    //   opacity: [0, 1],
+    //   translateY: [100, 0],
+    //   duration: 1000,
+    //   easing: "easeOutCirc",
+    // });
   }, []);
 
   return (
-    <div className="auth-container">
-      <div className="auth-picture-container sign-in">
+    <div className="sign-up d-flex p-20 gap-20">
+      <div className="sign-up__picture flex-1">
         <img
           src="https://qph.cf2.quoracdn.net/main-qimg-c058b36cd1b52cb2d9fef42a7d9045eb-lq"
-          alt=""
+          alt="sign-up__picture"
         />
-        <Corner />
-        <Corner />
-        <div className="back-button sign-in-back-button">
+        <Corner className="corner-svg" />
+        <Corner className="corner-svg" />
+        <div className="sign-up__back-btn-block">
           <button onClick={() => navigate("/")}>
             <BackButton />
           </button>
         </div>
       </div>
-      <form action="#" className="login-form sign-in-form">
-        <p className="auth-title">Create account</p>
+      <form className="sign-up__form d-flex fdc jcc aic gap-10 flex-1">
+        <p className="form__title  mb-20">Create account</p>
         <input id="name" type="text" placeholder="Type your name.." />
         <input id="email" type="email" placeholder="Type your email.." />
         <input id="password" type="text" placeholder="Type your password.." />
-        <div className="gender-container">
+        <div className="form__gender">
           <div>
             <label htmlFor="gender">
               Male
@@ -67,42 +65,42 @@ export default function SignUp() {
           </div>
         </div>
         <input
-          id="date"
+          id="age"
           type="number"
           min={16}
           max={120}
           placeholder="Type your age.."
         />
         <input id="country" type="text" placeholder="Type your country.." />
-        <button className="default-button" onClick={() => navigate("/storage")}>
+        <button className="form__btn" onClick={() => navigate("/storage")}>
           Create account <AddUserIcon />
         </button>
-        <div className="link-to">
+        <div className="form__link d-flex fdr jcc aic">
           Already have an account?&nbsp;
-          <div
+          <span
             onClick={() => {
-              anime({
-                targets: ".auth-picture-container",
-                opacity: [1, 0],
-                translateY: [0, 100],
-                duration: 1000,
-                easing: "easeOutCirc",
-              });
-              anime({
-                targets: ".login-form",
-                opacity: [1, 0],
-                translateY: [0, -100],
-                duration: 1000,
-                easing: "easeOutCirc",
-              });
+              // anime({
+              //   targets: ".auth-picture-container",
+              //   opacity: [1, 0],
+              //   translateY: [0, 100],
+              //   duration: 1000,
+              //   easing: "easeOutCirc",
+              // });
+              // anime({
+              //   targets: ".login-form",
+              //   opacity: [1, 0],
+              //   translateY: [0, -100],
+              //   duration: 1000,
+              //   easing: "easeOutCirc",
+              // });
 
               setTimeout(() => {
-                navigate("/login");
+                navigate("/authorization");
               }, 1000);
             }}
           >
             Log in
-          </div>
+          </span>
         </div>
       </form>
     </div>

@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import { ReactComponent as Delete } from "./../../../assets/actions/Delete.svg";
-import { ReactComponent as Edit } from "./../../../assets/actions/Edit.svg";
-import { ReactComponent as Check } from "./../../../assets/actions/Check.svg";
+import { ReactComponent as Delete } from "./../../assets/actions/Delete.svg";
+import { ReactComponent as Edit } from "./../../assets/actions/Edit.svg";
+import { ReactComponent as Check } from "./../../assets/actions/Check.svg";
 
-export default function FoodBlock({ id, img, name, amount }) {
+export default function FoodElement({ id, img, name, amount }) {
   const [isDisabled, setIsDisabled] = useState(true);
 
   return (

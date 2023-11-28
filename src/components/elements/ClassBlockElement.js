@@ -1,4 +1,9 @@
-export default function ClassBlock({ icon, title, productsCount, selected }) {
+export default function ClassBlockElement({
+  icon,
+  title,
+  productsCount,
+  selected,
+}) {
   return (
     <div className="class-block" data-css={selected ? "selected" : ""}>
       <div className="class-icon">{icon}</div>
