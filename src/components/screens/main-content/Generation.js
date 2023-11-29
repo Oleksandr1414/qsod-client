@@ -1,9 +1,9 @@
 import anime from "animejs";
-import SelectElement from "../../elements/SelectElement";
+import SelectElement from "@components/elements/SelectElement";
 
-import "./../../../styles/screens/main-content/Generation.css";
+import "@styles/screens/main-content/Generation.css";
 
-import { ReactComponent as MagniferIcon } from "./../../../assets/generation/MagniferIcon.svg";
+import { ReactComponent as MagniferIcon } from "@icons/do/MagniferIcon.svg";
 
 export default function Generation() {
   // anime({

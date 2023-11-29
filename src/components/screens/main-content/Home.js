@@ -1,14 +1,14 @@
-import MiniRecipeElement from "./../../elements/MiniRecipeElement";
+import MiniRecipeElement from "@components/elements/MiniRecipeElement";
 import { format } from "date-fns";
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { userData } from "../../../_helpers/data/user";
+import { userData } from "@data/user";
 
-import "./../../../styles/screens//main-content/Home.css";
+import "@styles/screens//main-content/Home.css";
 
-import { ReactComponent as Corner } from "./../../../assets/Corner.svg";
-import { ReactComponent as ArrowRightUp } from "./../../../assets/actions/ArrowRightUp.svg";
-import { ReactComponent as DoubleTopArrow } from "./../../../assets/home-page/DoubleTopArrow.svg";
+import { ReactComponent as ArrowRightUp } from "@icons/system/ArrowRightUp.svg";
+import { ReactComponent as Corner } from "@icons/system/Corner.svg";
+import { ReactComponent as DoubleTopArrow } from "@icons/system/ArrowTopDouble.svg";
 
 export default function Home() {
   const navigate = useNavigate();

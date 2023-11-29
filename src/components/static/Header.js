@@ -1,13 +1,13 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { userData } from "../../_helpers/data/user";
+import { userData } from "@data/user";
 
-import "./../../styles/static/Header.css";
+import "@styles/static/Header.css";
 
-import logo from "./../../assets/images/logo.png";
+import logo from "@images/logo.png";
 
-import { ReactComponent as HomeIcon } from "./../../assets/home-page/HomeIcon.svg";
-import { ReactComponent as UserIcon } from "./../../assets/home-page/UserIcon.svg";
-import { ReactComponent as LogoutIcon } from "./../../assets/home-page/LogoutIcon.svg";
+import { ReactComponent as HomeIcon } from "@icons/HomeIcon.svg";
+import { ReactComponent as UserIcon } from "@icons/users/UserIcon.svg";
+import { ReactComponent as LogOutIcon } from "@icons/do/LogOutIcon.svg";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -44,7 +44,7 @@ export default function Header() {
           <NavLink className="nav-link nav-link-logout" to="/account">
             <UserIcon />
             {userData.name}
-            <LogoutIcon onClick={sendLogout} />
+            <LogOutIcon onClick={sendLogout} />
           </NavLink>
         </div>
       </div>

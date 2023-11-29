@@ -1,12 +1,12 @@
-import { recipes } from "../../../_helpers/data/recipes";
+import { recipes } from "@data/recipes";
 import { useLocation } from "react-router-dom";
 import { useMemo, useState } from "react";
 
-import "./../../../styles/screens/main-content/Recipe.css";
+import "@styles/screens/main-content/Recipe.css";
 
-import { ReactComponent as Play } from "./../../../assets/actions/Play.svg";
-import { ReactComponent as Stop } from "./../../../assets/actions/Stop.svg";
-import { ReactComponent as TimeIcon } from "./../../../assets/TimeIcon.svg";
+import { ReactComponent as Play } from "@icons/actions/Play.svg";
+import { ReactComponent as Stop } from "@icons/actions/Stop.svg";
+import { ReactComponent as TimeIcon } from "@icons/recipe/TimeIcon.svg";
 
 export default function Recipe() {
   const [isImerStart, setIsImerStart] = useState(false);

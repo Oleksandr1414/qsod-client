@@ -1,13 +1,13 @@
-import MiniRecipeElement from "../../elements/MiniRecipeElement.js";
-import { userData } from "../../../_helpers/data/user.js";
+import MiniRecipeElement from "@components/elements/MiniRecipeElement.js";
 import { useNavigate } from "react-router-dom";
+import { userData } from "@data/user.js";
 
-import "./../../../styles/screens/main-content/Account.css";
+import "@styles/screens/main-content/Account.css";
 
-import { ReactComponent as UserIcon } from "./../../../assets/UserIcon.svg";
-import { ReactComponent as MaleIcon } from "./../../../assets/genders/MaleIcon.svg";
-import { ReactComponent as FemaleIcon } from "./../../../assets/genders/FemaleIcon.svg";
-import { ReactComponent as BuildingIcon } from "./../../../assets/home-page/BuildingIcon.svg";
+import { ReactComponent as BuildingIcon } from "@icons/BuildingIcon.svg";
+import { ReactComponent as FemaleIcon } from "@icons/users/FemaleIcon.svg";
+import { ReactComponent as MaleIcon } from "@icons/users/MaleIcon.svg";
+import { ReactComponent as UserIcon } from "@icons/users/UserIcon.svg";
 
 export default function Account() {
   const navigate = useNavigate();

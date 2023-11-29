@@ -3,10 +3,10 @@ import anime from "animejs";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { ReactComponent as BackButton } from "./../../assets/BackButton.svg";
-import { ReactComponent as MaleIcon } from "./../../assets/genders/MaleIcon.svg";
-import { ReactComponent as FemaleIcon } from "./../../assets/genders/FemaleIcon.svg";
-import { ReactComponent as AddUserIcon } from "./../../assets/auth-page/AddUserIcon.svg";
+import { ReactComponent as AddUserIcon } from "@icons/users/AddUserIcon.svg";
+import { ReactComponent as ArrowRight } from "@icons/system/ArrowRight.svg";
+import { ReactComponent as FemaleIcon } from "@icons/users/FemaleIcon.svg";
+import { ReactComponent as MaleIcon } from "@icons/users/MaleIcon.svg";
 
 export default function SignUpBlock({ refs: { signInRef, signUpRef } }) {
   const navigate = useNavigate();
@@ -39,7 +39,7 @@ export default function SignUpBlock({ refs: { signInRef, signUpRef } }) {
         <CornerElement />
         <div className="sign-up__back-btn-block">
           <button onClick={() => navigate("/")}>
-            <BackButton />
+            <ArrowRight />
           </button>
         </div>
       </div>

@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
 
-import "./../../styles/elements/SelectElement.css";
+import "@styles/elements/SelectElement.css";
 
-import { ReactComponent as Arrow } from "./../../assets/actions/ArrowDown.svg";
+import { ReactComponent as Arrow } from "@icons/system/ArrowDown.svg";
 
 export default function SelectElement({ optionList, defaultName }) {
   const activeDropdown = useRef(null);

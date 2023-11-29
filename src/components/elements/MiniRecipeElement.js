@@ -1,12 +1,12 @@
+import { recipes } from "@data/recipes";
 import { useNavigate } from "react-router-dom";
-import { recipes } from "../../_helpers/data/recipes";
 
-import "./../../styles/elements/MiniRecipeElement.css";
+import "@styles/elements/MiniRecipeElement.css";
 
-import { ReactComponent as LikeIcon } from "./../../assets/LikeIcon.svg";
-import { ReactComponent as TimeIcon } from "./../../assets/TimeIcon.svg";
-import { ReactComponent as Corner } from "./../../assets/Corner.svg";
-import { ReactComponent as SquareIcon } from "./../../assets/recipe/SquareIcon.svg";
+import { ReactComponent as Corner } from "@icons/system/Corner.svg";
+import { ReactComponent as LikeIcon } from "@icons/do/LikeIcon.svg";
+import { ReactComponent as OpenMoreIcon } from "@icons/do/OpenMoreIcon.svg";
+import { ReactComponent as TimeIcon } from "@icons/recipe/TimeIcon.svg";
 
 export default function MiniRecipeElement({ id, showInfo }) {
   const recipe = recipes[id];
@@ -19,7 +19,7 @@ export default function MiniRecipeElement({ id, showInfo }) {
       <Corner />
       <div className="link-to-recipe">
         <button>
-          <SquareIcon />
+          <OpenMoreIcon />
         </button>
       </div>
       <div className="recipe-image">

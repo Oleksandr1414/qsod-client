@@ -1,16 +1,15 @@
 import App from "./App";
-import Auth from "./components/Authorization";
-import Error from "./components/static/Error";
-import Home from "./components/screens/main-content/Home";
-import MainContent from "./components/MainContent";
+import Auth from "@components/Authorization";
+import Error from "@components/static/Error";
+import MainContent from "@components/MainContent";
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
-import store from "./store/store";
+import store from "@store/store";
 import { Provider } from "react-redux";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-import "./styles/GlobalParams.css";
-import "./styles/themes/DefaultTheme.css";
+import "@styles/GlobalParams.css";
+import "@styles/themes/DefaultTheme.css";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },

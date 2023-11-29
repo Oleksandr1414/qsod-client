@@ -3,8 +3,8 @@ import anime from "animejs";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { ReactComponent as BackButton } from "./../../assets/BackButton.svg";
-import { ReactComponent as LoginIcon } from "./../../assets/auth-page/LoginIcon.svg";
+import { ReactComponent as ArrowRight } from "@icons/system/ArrowRight.svg";
+import { ReactComponent as SignInIcon } from "@icons/do/SignInIcon.svg";
 
 export default function SignInBlock({ refs: { signInRef, signUpRef } }) {
   const navigate = useNavigate();
@@ -34,7 +34,7 @@ export default function SignInBlock({ refs: { signInRef, signUpRef } }) {
         <input id="password" type="text" placeholder="Type your password..." />
         <button className="form__btn" onClick={() => navigate("/home")}>
           Log in
-          <LoginIcon />
+          <SignInIcon />
         </button>
         <div className="form__link d-flex fdr jcc aic">
           New to App?&nbsp;
@@ -76,7 +76,7 @@ export default function SignInBlock({ refs: { signInRef, signUpRef } }) {
         <CornerElement />
         <div className="sign-in__back-btn-block">
           <button onClick={() => navigate("/")}>
-            <BackButton />
+            <ArrowRight />
           </button>
         </div>
       </div>

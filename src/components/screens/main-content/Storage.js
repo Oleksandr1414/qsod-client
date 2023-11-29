@@ -1,13 +1,13 @@
-import DatalistElement from "../../elements/DatalistElement";
-import SelectElement from "../../elements/SelectElement";
-import FoodElement from "../../elements/FoodElement";
-import ClassBlockElement from "../../elements/ClassBlockElement";
+import ClassBlockElement from "@components/elements/ClassBlockElement";
+import DatalistElement from "@components/elements/DatalistElement";
+import FoodElement from "@components/elements/FoodElement";
+import SelectElement from "@components/elements/SelectElement";
 import { useNavigate } from "react-router-dom";
 
-import "./../../../styles/screens//main-content/Storage.css";
+import "@styles/screens//main-content/Storage.css";
 
-import { ReactComponent as Add } from "./../../../assets/actions/Add.svg";
-import { ReactComponent as ArrowRightUp } from "./../../../assets/actions/ArrowRightUp.svg";
+import { ReactComponent as Add } from "@icons/actions/Add.svg";
+import { ReactComponent as ArrowRightUp } from "@icons/system/ArrowRightUp.svg";
 
 export default function Storage() {
   const navigate = useNavigate();

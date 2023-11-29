@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-import "./../styles/screens/Authorization.css";
+import "@styles/screens/Authorization.css";
 
 const SignInBlock = React.lazy(() => import("./screens/SignInBlock"));
 const SignUpBlock = React.lazy(() => import("./screens/SignUpBlock"));

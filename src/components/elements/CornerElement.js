@@ -1,4 +1,4 @@
-import CornerPng from "./../../assets/images/WhiteCorner.png";
+import CornerPng from "@images/system/WhiteCorner.png";
 
 export default function CornerElement() {
   return (
