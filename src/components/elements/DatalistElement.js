@@ -1,6 +1,11 @@
 import { useEffect, useRef } from "react";
+import { useFormContext } from "react-hook-form";
 
-export default function DatalistElement({ dataList }) {
+import "@styles/elements/DataListElement.css";
+
+export default function DatalistElement({ dataList, placeholder, inputName }) {
+  const { register, setValue } = useFormContext();
+
   const nameInput = useRef();
   const nameDataList = useRef();
 
@@ -13,8 +18,11 @@ export default function DatalistElement({ dataList }) {
       return;
     }
 
+    register(inputName, { required: true });
+
     for (let option of nameDataList.current.options) {
       option.onclick = function () {
+        setValue(inputName, option.value);
         nameInput.current.value = option.value;
         nameDataList.current.style.display = "none";
       };
@@ -73,13 +81,13 @@ export default function DatalistElement({ dataList }) {
     <div className="custom-datalist">
       <input
         list=""
-        placeholder="Name"
         ref={nameInput}
+        placeholder={placeholder}
         onFocus={onFocusNameInput}
         onInput={onInputNameInput}
         onKeyDown={onKeyDownNameInput}
       />
-      <datalist ref={nameDataList} className="name-list" id="name">
+      <datalist ref={nameDataList} className="datalist__container">
         {dataList.map((el) => (
           <option key={el} defaultValue={el}>
             {el}

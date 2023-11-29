@@ -129,6 +129,26 @@
 
   font-size: 1.2rem;
 }
+.sign-up__form > .custom-datalist {
+  height: 65px;
+}
+.sign-up__form > .custom-datalist > input {
+  width: 360px;
+
+  padding: 20px;
+
+  font-size: 1.2rem;
+
+  border: 0;
+  border-bottom: 1px solid transparent;
+  border-radius: var(--border-radius-small);
+
+  background-color: #f1f1f1;
+}
+.sign-up__form > .custom-datalist > dataList {
+  top: calc(100% + 5px);
+}
+
 /* btn */
 .form__btn {
   width: 360px;
@@ -221,8 +241,7 @@
   cursor: pointer;
 }
 .form__gender > div > input {
-  appearance: none;
-  /* display: none; */
+  /* appearance: none; */
 }
 
 .form__gender > div > label {

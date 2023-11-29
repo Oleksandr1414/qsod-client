@@ -207,64 +207,6 @@ button.add:hover > svg > path {
   stroke: #000;
 }
 
-.custom-datalist {
-  position: relative;
-
-  height: 40px;
-}
-.custom-datalist > input {
-  width: 180px;
-  height: 100%;
-
-  padding: 0 16px;
-
-  font-size: 1rem;
-
-  border: none;
-  border-radius: var(--border-radius-small);
-
-  background-color: #fff;
-}
-.custom-datalist > input::-webkit-calendar-picker-indicator {
-  display: none;
-}
-.custom-datalist > input:focus {
-  outline: none;
-}
-.custom-datalist > datalist {
-  position: absolute;
-  top: 120%;
-
-  width: 180px;
-
-  gap: 5px;
-  flex-direction: column;
-
-  border: 8px solid #fff;
-  border-radius: var(--border-radius-small);
-
-  background-color: #fff;
-
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
-    rgba(0, 0, 0, 0.05) 0px 5px 10px;
-
-  z-index: 12;
-}
-.custom-datalist > input::-webkit-calendar-picker-indicator {
-  display: none !important;
-}
-.custom-datalist > datalist > option {
-  padding: 8px 16px;
-
-  border-radius: var(--border-radius-ultra-small);
-
-  transition: background-color 0.3s;
-  cursor: pointer;
-}
-.custom-datalist > datalist > option:hover {
-  background-color: #f1f1f1;
-}
-
 .custom-select {
   min-width: 180px;
 

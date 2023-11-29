@@ -69,7 +69,7 @@ export default function SelectElement({ optionList, defaultName }) {
     <div
       ref={activeDropdown}
       onClick={dropDownOnClick}
-      className="elements wrapper-dropdown"
+      className="custom-select wrapper-dropdown"
       id="dropdown"
     >
       <span className="selected-display" id="destination">

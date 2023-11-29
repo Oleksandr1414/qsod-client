@@ -14,7 +14,9 @@ export default function Header() {
 
   const sendLogout = (event) => {
     event.preventDefault();
-    navigate("/");
+
+    localStorage.removeItem("currentUser");
+    navigate("/authorization");
   };
 
   return (

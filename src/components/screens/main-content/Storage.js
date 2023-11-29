@@ -2,6 +2,7 @@ import ClassBlockElement from "@components/elements/ClassBlockElement";
 import DatalistElement from "@components/elements/DatalistElement";
 import FoodElement from "@components/elements/FoodElement";
 import SelectElement from "@components/elements/SelectElement";
+import { FormProvider, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 import "@styles/screens//main-content/Storage.css";
@@ -11,27 +12,35 @@ import { ReactComponent as ArrowRightUp } from "@icons/system/ArrowRightUp.svg";
 
 export default function Storage() {
   const navigate = useNavigate();
+  const methods = useForm();
+
   return (
-    <div className="main-container storage-container">
+    <div className="main-container storage-container mt-70">
       <div className="items-navigation-container">
-        <SelectElement
-          defaultName={"Class"}
-          optionList={[
-            "Meat",
-            "Milk",
-            "Herbs",
-            "Spices",
-            "Fruits",
-            "Vegetables",
-          ]}
-        />
-        <DatalistElement dataList={["Pork", "Chicken", "Veal", "Neck"]} />
+        <FormProvider {...methods}>
+          <SelectElement
+            defaultName={"Class"}
+            optionList={[
+              "Meat",
+              "Milk",
+              "Herbs",
+              "Spices",
+              "Fruits",
+              "Vegetables",
+            ]}
+          />
+          <DatalistElement
+            inputName="Ingridient"
+            placeholder="Ingridient"
+            dataList={["Pork", "Chicken", "Veal", "Neck"]}
+          />
 
-        <input placeholder="Amount" />
+          <input placeholder="Amount" />
 
-        <button className="add">
-          <Add /> Add
-        </button>
+          <button className="add">
+            <Add /> Add
+          </button>
+        </FormProvider>
       </div>
       <div className="items-container">
         <div className="items-classes">
