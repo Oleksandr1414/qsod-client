@@ -1,4 +1,4 @@
-import isUserLoggedInReducer from "./IsUserLoggedIn";
+import isUserLoggedInReducer from "./states/IsUserLoggedIn";
 import { combineReducers } from "@reduxjs/toolkit";
 
 const appReducer = combineReducers({

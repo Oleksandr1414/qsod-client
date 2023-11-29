@@ -1,6 +1,5 @@
 import CornerElement from "../elements/CornerElement";
 import anime from "animejs";
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { ReactComponent as ArrowRight } from "@icons/system/ArrowRight.svg";
@@ -9,30 +8,30 @@ import { ReactComponent as SignInIcon } from "@icons/do/SignInIcon.svg";
 export default function SignInBlock({ refs: { signInRef, signUpRef } }) {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    anime({
-      targets: ".sign-in__picture",
-      opacity: [0, 1],
-      translateY: [100, 0],
-      duration: 1000,
-      easing: "easeOutCirc",
-    });
-    anime({
-      targets: ".sign-in__form",
-      opacity: [0, 1],
-      translateY: [-100, 0],
-      duration: 1000,
-      easing: "easeOutCirc",
-    });
-  }, []);
-
   return (
     <div ref={signInRef} className="sign-in d-flex p-20 gap-20">
       <form className="sign-in__form d-flex fdc jcc aic gap-10 flex-1">
         <p className="form__title mb-20">Login to your account</p>
         <input id="email" type="email" placeholder="Type your email.." />
         <input id="password" type="text" placeholder="Type your password..." />
-        <button className="form__btn" onClick={() => navigate("/home")}>
+        <button
+          className="form__btn"
+          onClick={(event) => {
+            event.preventDefault();
+
+            anime({
+              targets: ".sign-in",
+              opacity: [1, 0],
+              translateX: [0, -200],
+              duration: 1000,
+              easing: "easeOutCirc",
+            });
+
+            setTimeout(() => {
+              navigate("/home");
+            }, 1000);
+          }}
+        >
           Log in
           <SignInIcon />
         </button>
@@ -44,20 +43,40 @@ export default function SignInBlock({ refs: { signInRef, signUpRef } }) {
                 targets: ".sign-in__form",
                 opacity: [1, 0],
                 translateY: [0, 100],
-                duration: 1000,
+                duration: 900,
                 easing: "easeOutCirc",
               });
               anime({
                 targets: ".sign-in__picture",
                 opacity: [1, 0],
                 translateY: [0, -100],
+                duration: 900,
+                easing: "easeOutCirc",
+              });
+
+              signUpRef.current.className = signUpRef.current.className.replace(
+                "d-none",
+                "d-flex"
+              );
+
+              anime({
+                targets: ".sign-up__picture",
+                opacity: [0, 1],
+                translateY: [-100, 0],
                 duration: 1000,
+                delay: 400,
+                easing: "easeOutCirc",
+              });
+              anime({
+                targets: ".sign-up__form",
+                opacity: [0, 1],
+                translateY: [100, 0],
+                duration: 1000,
+                delay: 400,
                 easing: "easeOutCirc",
               });
 
               setTimeout(() => {
-                signUpRef.current.className =
-                  signUpRef.current.className.replace("d-none", "d-flex");
                 signInRef.current.className =
                   signInRef.current.className.replace("d-flex", "d-none");
               }, 1000);
