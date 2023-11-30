@@ -47,7 +47,7 @@ export default function Home() {
           <br />
           Recipe For Diner
           <br />
-          From AI
+          From AI <span className="home-title__span">Join now!</span>
         </h2>
         <button
           className="button-generation"

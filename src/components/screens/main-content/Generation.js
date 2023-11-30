@@ -3,6 +3,8 @@ import SelectElement from "@components/elements/SelectElement";
 
 import "@styles/screens/main-content/Generation.css";
 
+import bgImageColor from "@images/bgImageColor.png";
+
 import { ReactComponent as MagniferIcon } from "@icons/do/MagniferIcon.svg";
 
 export default function Generation() {
@@ -32,10 +34,7 @@ export default function Generation() {
   return (
     <div className="main-container generation-container">
       <div className="generation-options-container">
-        <img
-          src="https://qph.cf2.quoracdn.net/main-qimg-c058b36cd1b52cb2d9fef42a7d9045eb-lq"
-          alt=""
-        />
+        <img src={bgImageColor} alt="generation__picture" />
         <p className="generation-options-title letters">Generate recipes</p>
         <p className="generation-options-subtitle">
           Generate a recipe based on your preferences and capabilities

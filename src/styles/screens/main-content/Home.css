@@ -24,9 +24,17 @@
 
   font-size: 5rem;
   font-weight: 700;
-  line-height: 5.2rem;
+  line-height: 5.5rem;
 }
+.home-title__span {
+  padding: 0 20px;
 
+  color: var(--white);
+
+  border-radius: var(--border-radius);
+
+  background-color: #f1f1f1;
+}
 .home-picture-container {
   position: relative;
 
@@ -128,7 +136,7 @@
 .button-generation {
   padding: 10px 10px 10px 20px;
   margin-top: 40px;
-  margin-bottom: 120px;
+  margin-bottom: 100px;
 
   display: flex;
   justify-content: center;
@@ -139,7 +147,7 @@
   font-size: 2rem;
 
   border: none;
-  border-radius: 50px;
+  border-radius: var(--border-radius);
 
   background-color: #000;
 
