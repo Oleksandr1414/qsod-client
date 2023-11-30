@@ -1,5 +1,5 @@
 import CornerElement from "../elements/CornerElement";
-import anime from "animejs";
+import { signInAnimation, signUpAnimation } from "@animations/authorization";
 import { toast } from "react-toastify";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
@@ -9,6 +9,8 @@ import { useState } from "react";
 import bgImageColor from "@images/bgImageColor.png";
 
 import { ReactComponent as ArrowRight } from "@icons/system/ArrowRight.svg";
+import { ReactComponent as PasswordHideIcon } from "@icons/system/PasswordHideIcon.svg";
+import { ReactComponent as PasswordShowIcon } from "@icons/system/PasswordShowIcon.svg";
 import { ReactComponent as SignInIcon } from "@icons/do/SignInIcon.svg";
 
 export default function SignInBlock({ refs: { signInRef, signUpRef } }) {
@@ -54,14 +56,7 @@ export default function SignInBlock({ refs: { signInRef, signUpRef } }) {
       notify("Incorrect email or password.");
       return;
     }
-
-    anime({
-      targets: ".sign-in",
-      opacity: [1, 0],
-      translateX: [0, -200],
-      duration: 1000,
-      easing: "easeOutCirc",
-    });
+    signInAnimation.exit();
 
     setTimeout(() => {
       localStorage.setItem(
@@ -96,14 +91,21 @@ export default function SignInBlock({ refs: { signInRef, signUpRef } }) {
           })}
           autoFocus
         />
-        <input
-          type={isHidePassword ? "text" : "password"}
-          placeholder="Type your password..."
-          className={errors.email && "error"}
-          {...register("password", {
-            required: "The password is a required field.",
-          })}
-        />
+        <div className="input__password">
+          <input
+            type={isHidePassword ? "text" : "password"}
+            placeholder="Type your password..."
+            className={errors.email && "error"}
+            {...register("password", {
+              required: "The password is a required field.",
+            })}
+          />
+          {isHidePassword ? (
+            <PasswordHideIcon onClick={() => setIsHidePassword(false)} />
+          ) : (
+            <PasswordShowIcon onClick={() => setIsHidePassword(true)} />
+          )}
+        </div>
         <button className="form__btn" type="submit">
           Log in
           <SignInIcon />
@@ -114,42 +116,12 @@ export default function SignInBlock({ refs: { signInRef, signUpRef } }) {
             onClick={() => {
               toast.dismiss();
 
-              anime({
-                targets: ".sign-in__form",
-                opacity: [1, 0],
-                translateY: [0, 100],
-                duration: 900,
-                easing: "easeOutCirc",
-              });
-              anime({
-                targets: ".sign-in__picture",
-                opacity: [1, 0],
-                translateY: [0, -100],
-                duration: 900,
-                easing: "easeOutCirc",
-              });
-
+              signInAnimation.out();
               signUpRef.current.className = signUpRef.current.className.replace(
                 "d-none",
                 "d-flex"
               );
-
-              anime({
-                targets: ".sign-up__picture",
-                opacity: [0, 1],
-                translateY: [-100, 0],
-                duration: 1000,
-                delay: 400,
-                easing: "easeOutCirc",
-              });
-              anime({
-                targets: ".sign-up__form",
-                opacity: [0, 1],
-                translateY: [100, 0],
-                duration: 1000,
-                delay: 400,
-                easing: "easeOutCirc",
-              });
+              signUpAnimation.in();
 
               setTimeout(() => {
                 signInRef.current.className =

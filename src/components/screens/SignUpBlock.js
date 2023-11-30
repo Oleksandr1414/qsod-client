@@ -1,8 +1,8 @@
 import CornerElement from "@components/elements/CornerElement";
 import DatalistElement from "@components/elements/DatalistElement";
-import anime from "animejs";
 import { FormProvider, useForm } from "react-hook-form";
 import { globalConstants } from "../../_helpers/constants";
+import { signInAnimation, signUpAnimation } from "@animations/authorization";
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -13,6 +13,8 @@ import { ReactComponent as AddUserIcon } from "@icons/users/AddUserIcon.svg";
 import { ReactComponent as ArrowRight } from "@icons/system/ArrowRight.svg";
 import { ReactComponent as FemaleIcon } from "@icons/users/FemaleIcon.svg";
 import { ReactComponent as MaleIcon } from "@icons/users/MaleIcon.svg";
+import { ReactComponent as PasswordHideIcon } from "@icons/system/PasswordHideIcon.svg";
+import { ReactComponent as PasswordShowIcon } from "@icons/system/PasswordShowIcon.svg";
 
 export default function SignUpBlock({ refs: { signInRef, signUpRef } }) {
   const navigate = useNavigate();
@@ -64,14 +66,7 @@ export default function SignUpBlock({ refs: { signInRef, signUpRef } }) {
 
   const onSubmit = (data) => {
     toast.dismiss();
-
-    anime({
-      targets: ".sign-up",
-      opacity: [1, 0],
-      translateX: [0, -200],
-      duration: 1000,
-      easing: "easeOutCirc",
-    });
+    signUpAnimation.exit();
 
     setTimeout(() => {
       localStorage.setItem(
@@ -127,16 +122,23 @@ export default function SignUpBlock({ refs: { signInRef, signUpRef } }) {
               pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
             })}
           />
-          <input
-            type={isHidePassword ? "text" : "password"}
-            placeholder="Type your password..."
-            className={errors.password && "error"}
-            {...register("password", {
-              required: "The password is a required field.",
-              pattern:
-                /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,20}$/gm,
-            })}
-          />
+          <div className="input__password">
+            <input
+              type={isHidePassword ? "text" : "password"}
+              placeholder="Type your password..."
+              className={errors.password && "error"}
+              {...register("password", {
+                required: "The password is a required field.",
+                pattern:
+                  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,20}$/gm,
+              })}
+            />
+            {isHidePassword ? (
+              <PasswordHideIcon onClick={() => setIsHidePassword(false)} />
+            ) : (
+              <PasswordShowIcon onClick={() => setIsHidePassword(true)} />
+            )}
+          </div>
           <div className="form__gender">
             <div className="gender__input-container">
               <label
@@ -201,40 +203,10 @@ export default function SignUpBlock({ refs: { signInRef, signUpRef } }) {
               onClick={() => {
                 toast.dismiss();
 
-                anime({
-                  targets: ".sign-up__picture",
-                  opacity: [1, 0],
-                  translateY: [0, 100],
-                  duration: 900,
-                  easing: "easeOutCirc",
-                });
-                anime({
-                  targets: ".sign-up__form",
-                  opacity: [1, 0],
-                  translateY: [0, -100],
-                  duration: 900,
-                  easing: "easeOutCirc",
-                });
-
+                signUpAnimation.out();
                 signInRef.current.className =
                   signInRef.current.className.replace("d-none", "d-flex");
-
-                anime({
-                  targets: ".sign-in__picture",
-                  opacity: [0, 1],
-                  translateY: [100, 0],
-                  duration: 1000,
-                  delay: 400,
-                  easing: "easeOutCirc",
-                });
-                anime({
-                  targets: ".sign-in__form",
-                  opacity: [0, 1],
-                  translateY: [-100, 0],
-                  duration: 1000,
-                  delay: 400,
-                  easing: "easeOutCirc",
-                });
+                signInAnimation.in();
 
                 setTimeout(() => {
                   signUpRef.current.className =

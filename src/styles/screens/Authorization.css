@@ -150,6 +150,29 @@
   top: calc(100% + 5px);
 }
 
+.input__password {
+  position: relative;
+}
+.input__password > input {
+  width: 360px;
+
+  padding-right: 50px;
+
+  font-size: 1.2rem;
+}
+.input__password > svg {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+
+  width: 25px;
+  height: max-content;
+
+  transform: translateY(-50%);
+
+  cursor: pointer;
+}
+
 /* btn */
 .form__btn {
   width: 360px;
