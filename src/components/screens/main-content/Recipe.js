@@ -4,6 +4,8 @@ import { useMemo, useState } from "react";
 
 import "@styles/screens/main-content/Recipe.css";
 
+import bgImageColor from "@images/bgImageColor.png";
+
 import { ReactComponent as Play } from "@icons/actions/Play.svg";
 import { ReactComponent as Stop } from "@icons/actions/Stop.svg";
 import { ReactComponent as TimeIcon } from "@icons/recipe/TimeIcon.svg";
@@ -49,10 +51,7 @@ export default function Recipe() {
         <>
           <div className="recipe-components">
             <div className="recipe-picture">
-              <img
-                alt=""
-                src="https://qph.cf2.quoracdn.net/main-qimg-c058b36cd1b52cb2d9fef42a7d9045eb-lq"
-              />
+              <img alt="recipe__picture" src={bgImageColor} />
             </div>
             <div className="recipe-ingredients">
               <p>List</p>

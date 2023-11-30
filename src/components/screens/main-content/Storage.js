@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 
 import "@styles/screens//main-content/Storage.css";
 
+import bgImageColor from "@images/bgImageColor.png";
+
 import { ReactComponent as Add } from "@icons/actions/Add.svg";
 import { ReactComponent as ArrowRightUp } from "@icons/system/ArrowRightUp.svg";
 
@@ -140,16 +142,10 @@ export default function Storage() {
         </div>
         <div className="share-container">
           <div className="custom-picture-container">
-            <img
-              alt=""
-              src="https://qph.cf2.quoracdn.net/main-qimg-c058b36cd1b52cb2d9fef42a7d9045eb-lq"
-            />
+            <img alt="custom__picture" src={bgImageColor} />
           </div>
           <div className="dishes-list-container">
-            <img
-              alt=""
-              src="https://qph.cf2.quoracdn.net/main-qimg-c058b36cd1b52cb2d9fef42a7d9045eb-lq"
-            />
+            <img alt="dishes__picture" src={bgImageColor} />
             <div className="dishes-generation-button">
               <svg width="24" height="24" className="top-right">
                 <defs>

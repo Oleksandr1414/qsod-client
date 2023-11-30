@@ -7,6 +7,8 @@ import { userData } from "@data/user";
 
 import "@styles/screens//main-content/Home.css";
 
+import bgImageColor from "@images/bgImageColor.png";
+
 import { ReactComponent as ArrowRightUp } from "@icons/system/ArrowRightUp.svg";
 import { ReactComponent as DoubleTopArrow } from "@icons/system/ArrowTopDouble.svg";
 
@@ -66,10 +68,7 @@ export default function Home() {
         </div>
       </div>
       <div className="home-picture-container">
-        <img
-          alt=""
-          src="https://qph.cf2.quoracdn.net/main-qimg-c058b36cd1b52cb2d9fef42a7d9045eb-lq"
-        />
+        <img alt="home__picture" src={bgImageColor} />
         <div className="date-block">
           <p>Current time</p>
           {currentTimeView}

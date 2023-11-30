@@ -19,7 +19,12 @@ export default function Account() {
         <div className="history-block">
           {userData.history.slice(0, 8).map((id) =>
             id ? (
-              <MiniRecipeElement id={id} key={id} showInfo={true} />
+              <MiniRecipeElement
+                id={id}
+                key={id}
+                showInfo={true}
+                cornerColor="gray"
+              />
             ) : (
               <div
                 className="recipe-empty"

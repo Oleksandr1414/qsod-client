@@ -120,18 +120,21 @@
   stroke: #00abf4;
 }
 
-.recipe-block > svg {
+.recipe-block > .corner-element {
   position: absolute;
+
+  width: 36px;
+  height: 36px;
 
   z-index: 1;
 
   transform: rotate(-90deg);
 }
-.recipe-block > svg:nth-child(1) {
+.recipe-block > .corner-element:nth-child(1) {
   top: 0;
   right: 50px;
 }
-.recipe-block > svg:nth-child(2) {
+.recipe-block > .corner-element:nth-child(2) {
   top: 50px;
   right: 0;
 }
