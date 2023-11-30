@@ -1,26 +1,57 @@
 import CornerElement from "../elements/CornerElement";
 import anime from "animejs";
+import { toast } from "react-toastify";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
+import bgImageColor from "@images/bgImageColor.png";
 
 import { ReactComponent as ArrowRight } from "@icons/system/ArrowRight.svg";
 import { ReactComponent as SignInIcon } from "@icons/do/SignInIcon.svg";
 
 export default function SignInBlock({ refs: { signInRef, signUpRef } }) {
   const navigate = useNavigate();
+  const [isHidePassword, setIsHidePassword] = useState(false);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    mode: "onSubmit",
+    reValidateMode: "onSubmit",
+  });
+
+  const notify = (message) => {
+    toast.dismiss();
+    toast.error(message, {
+      position: "top-left",
+      autoClose: 5000,
+      icon: false,
+      closeButton: false,
+      pauseOnFocusLoss: false,
+      theme: "colored",
+    });
+  };
+
+  useEffect(() => {
+    if (errors.email) {
+      notify(errors.email.message);
+      return;
+    }
+    if (errors.password) {
+      notify(errors.password.message);
+      return;
+    }
+  }, [Object.keys(errors).length]);
 
   const onSubmit = (data) => {
-    console.log(data);
+    toast.dismiss();
 
     if (data.email !== "admin@gmail.com" && data.password !== "Admin123") {
-      alert("Invalid user");
-      console.log(errors);
+      notify("Incorrect email or password.");
       return;
     }
 
@@ -53,22 +84,24 @@ export default function SignInBlock({ refs: { signInRef, signUpRef } }) {
       <form
         className="sign-in__form d-flex fdc jcc aic gap-10 flex-1"
         onSubmit={handleSubmit(onSubmit)}
+        autoComplete="off"
       >
         <p className="form__title mb-20">Login to your account</p>
         <input
           type="text"
           placeholder="Type your email..."
+          className={errors.email && "error"}
           {...register("email", {
-            required: true,
-            pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
+            required: "The email is a required field.",
           })}
+          autoFocus
         />
         <input
-          type="text"
+          type={isHidePassword ? "text" : "password"}
           placeholder="Type your password..."
+          className={errors.email && "error"}
           {...register("password", {
-            required: true,
-            pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,20}$/gm,
+            required: "The password is a required field.",
           })}
         />
         <button className="form__btn" type="submit">
@@ -79,6 +112,8 @@ export default function SignInBlock({ refs: { signInRef, signUpRef } }) {
           New to App?&nbsp;
           <span
             onClick={() => {
+              toast.dismiss();
+
               anime({
                 targets: ".sign-in__form",
                 opacity: [1, 0],
@@ -127,10 +162,7 @@ export default function SignInBlock({ refs: { signInRef, signUpRef } }) {
         </div>
       </form>
       <div className="sign-in__picture flex-1">
-        <img
-          src="https://qph.cf2.quoracdn.net/main-qimg-c058b36cd1b52cb2d9fef42a7d9045eb-lq"
-          alt="sign-in__picture"
-        />
+        <img src={bgImageColor} alt="sign-in__picture" />
         <CornerElement />
         <CornerElement />
         <div className="sign-in__back-btn-block">

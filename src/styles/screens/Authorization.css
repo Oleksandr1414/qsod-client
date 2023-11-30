@@ -27,6 +27,7 @@
   border-top-right-radius: 40px;
 }
 .sign-up__picture > img {
+  border-radius: var(--border-radius);
   border-top-left-radius: 40px;
 }
 
@@ -75,7 +76,7 @@
 
   border-radius: 0 35px;
 
-  background-color: #fff;
+  background-color: var(--white);
 }
 .sign-up__back-btn-block {
   left: 0;
@@ -95,7 +96,7 @@
 
   border: 0;
   border-radius: var(--border-radius);
-  background-color: #000;
+  background-color: var(--black);
 
   cursor: pointer;
 }
@@ -110,17 +111,17 @@
 }
 .sign-in__back-btn-block > button > svg > path,
 .sign-up__back-btn-block > button > svg > path {
-  stroke: #fff;
+  stroke: var(--white);
 
   transition: stroke 0.3s;
 }
 .sign-in__back-btn-block > button:hover > svg,
 .sign-up__back-btn-block > button:hover > svg {
-  background-color: #fff;
+  background-color: var(--white);
 }
 .sign-in__back-btn-block > button:hover > svg > path,
 .sign-up__back-btn-block > button:hover > svg > path {
-  stroke: #000;
+  stroke: var(--black);
 }
 
 .sign-in__form > input,
@@ -163,12 +164,12 @@
   gap: 7px;
 
   font-size: 1.2rem;
-  color: #fff;
+  color: var(--white);
 
   border: 0;
   border-radius: var(--border-radius-small);
 
-  background-color: #000;
+  background-color: var(--black);
 
   cursor: pointer;
 }
@@ -185,16 +186,16 @@
 }
 .form__btn > svg > path,
 .form__btn > svg > circle {
-  stroke: #fff;
+  stroke: var(--white);
 
   transition: stroke 0.3s;
 }
 .form__btn:hover > svg {
-  background-color: #fff;
+  background-color: var(--white);
 }
 .form__btn:hover > svg > path,
 .form__btn:hover > svg > circle {
-  stroke: #000;
+  stroke: var(--black);
 }
 
 .sign-up__form > button > svg {
@@ -217,7 +218,7 @@
   cursor: pointer;
 }
 .form__link > span:hover {
-  color: #000;
+  color: var(--accent-color);
 }
 
 .form__gender {
@@ -227,12 +228,8 @@
   display: flex;
   gap: 10px;
 }
-.form__gender > div {
-  width: 100%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.gender__input-container {
+  flex: 1;
 
   border-radius: var(--border-radius-small);
 
@@ -240,11 +237,10 @@
 
   cursor: pointer;
 }
-.form__gender > div > input {
-  /* appearance: none; */
+.gender__input-container > input {
+  display: none;
 }
-
-.form__gender > div > label {
+.gender__input-container > label {
   width: 100%;
   height: 100%;
 
@@ -253,15 +249,23 @@
   align-items: center;
 
   font-size: 1.2rem;
-}
-.form__gender > div:nth-child(1) > label {
-  padding-left: 20px;
-
-  background-color: #186f65;
 
   border-radius: var(--border-radius-small);
+
+  transition: background-color 0.3s;
+
+  cursor: pointer;
 }
-.form__gender > div > label > svg {
+.gender__input-container > label > svg {
   width: 36px;
   height: 36px;
+}
+.gender__input-container:nth-child(1) > label {
+  padding-left: 20px;
+}
+
+.gender__input-container > label.checked {
+  background-color: var(--accent-color);
+
+  border-radius: var(--border-radius-small);
 }

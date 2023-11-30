@@ -1,9 +1,13 @@
 import CornerElement from "@components/elements/CornerElement";
 import DatalistElement from "@components/elements/DatalistElement";
 import anime from "animejs";
-import { globalConstants } from "../../_helpers/constants";
 import { FormProvider, useForm } from "react-hook-form";
+import { globalConstants } from "../../_helpers/constants";
+import { toast } from "react-toastify";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
+import bgImageColor from "@images/bgImageColor.png";
 
 import { ReactComponent as AddUserIcon } from "@icons/users/AddUserIcon.svg";
 import { ReactComponent as ArrowRight } from "@icons/system/ArrowRight.svg";
@@ -12,16 +16,54 @@ import { ReactComponent as MaleIcon } from "@icons/users/MaleIcon.svg";
 
 export default function SignUpBlock({ refs: { signInRef, signUpRef } }) {
   const navigate = useNavigate();
+  const [gender, setGender] = useState("male");
+  const [isHidePassword, setIsHidePassword] = useState(false);
 
   const methods = useForm();
   const {
     register,
+    setValue,
     handleSubmit,
     formState: { errors },
   } = methods;
 
+  const notify = (message) => {
+    toast.dismiss();
+    toast.error(message, {
+      position: "top-right",
+      autoClose: 5000,
+      icon: false,
+      closeButton: false,
+      pauseOnFocusLoss: false,
+      theme: "colored",
+    });
+  };
+
+  useEffect(() => {
+    if (errors.name) {
+      notify(errors.name.message);
+      return;
+    }
+    if (errors.email) {
+      notify(errors.email.message);
+      return;
+    }
+    if (errors.password) {
+      notify(errors.password.message);
+      return;
+    }
+    if (errors.age) {
+      notify(errors.age.message);
+      return;
+    }
+    if (errors.country) {
+      notify(errors.country.message);
+      return;
+    }
+  }, [Object.keys(errors).length]);
+
   const onSubmit = (data) => {
-    console.log(data);
+    toast.dismiss();
 
     anime({
       targets: ".sign-up",
@@ -46,15 +88,11 @@ export default function SignUpBlock({ refs: { signInRef, signUpRef } }) {
       navigate("/storage");
     }, 1000);
   };
-  errors && console.log("ERROR: ", errors);
 
   return (
     <div ref={signUpRef} className="sign-up d-none p-20 gap-20">
       <div className="sign-up__picture flex-1">
-        <img
-          src="https://qph.cf2.quoracdn.net/main-qimg-c058b36cd1b52cb2d9fef42a7d9045eb-lq"
-          alt="sign-up__picture"
-        />
+        <img src={bgImageColor} alt="sign-up__picture" />
         <CornerElement />
         <CornerElement />
         <div className="sign-up__back-btn-block">
@@ -67,13 +105,15 @@ export default function SignUpBlock({ refs: { signInRef, signUpRef } }) {
         <form
           className="sign-up__form d-flex fdc jcc aic gap-10 flex-1"
           onSubmit={handleSubmit(onSubmit)}
+          autoComplete="off"
         >
-          <p className="form__title  mb-20">Create account</p>
+          <p className="form__title  mb-20">Create an account</p>
           <input
             type="text"
             placeholder="Type your name..."
+            className={errors.name && "error"}
             {...register("name", {
-              required: true,
+              required: "The name is a required field.",
               maxLength: 16,
               pattern: /^[A-Z]+$/i,
             })}
@@ -81,23 +121,32 @@ export default function SignUpBlock({ refs: { signInRef, signUpRef } }) {
           <input
             type="text"
             placeholder="Type your email..."
+            className={errors.email && "error"}
             {...register("email", {
-              required: true,
+              required: "The email is a required field.",
               pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
             })}
           />
           <input
-            type="text"
+            type={isHidePassword ? "text" : "password"}
             placeholder="Type your password..."
+            className={errors.password && "error"}
             {...register("password", {
-              required: true,
+              required: "The password is a required field.",
               pattern:
                 /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,20}$/gm,
             })}
           />
           <div className="form__gender">
-            <div>
-              <label htmlFor="gender">
+            <div className="gender__input-container">
+              <label
+                htmlFor="gender"
+                onClick={() => {
+                  setGender("male");
+                  setValue("gender", "male");
+                }}
+                className={gender === "male" ? "checked" : ""}
+              >
                 Male
                 <MaleIcon />
               </label>
@@ -105,10 +154,18 @@ export default function SignUpBlock({ refs: { signInRef, signUpRef } }) {
                 {...register("gender", { required: true })}
                 type="radio"
                 value="male"
+                checked={gender === "male"}
               />
             </div>
-            <div>
-              <label htmlFor="gender">
+            <div className="gender__input-container">
+              <label
+                htmlFor="gender"
+                onClick={() => {
+                  setGender("female");
+                  setValue("gender", "female");
+                }}
+                className={gender === "female" ? "checked" : ""}
+              >
                 Female
                 <FemaleIcon />
               </label>
@@ -116,13 +173,19 @@ export default function SignUpBlock({ refs: { signInRef, signUpRef } }) {
                 {...register("gender", { required: true })}
                 type="radio"
                 value="female"
+                checked={gender === "female"}
               />
             </div>
           </div>
           <input
             type="text"
             placeholder="Type your age..."
-            {...register("age", { required: true, min: 16, max: 99 })}
+            className={errors.age && "error"}
+            {...register("age", {
+              required: "The age is a required field.",
+              min: 16,
+              max: 99,
+            })}
           />
           <DatalistElement
             inputName="country"
@@ -136,6 +199,8 @@ export default function SignUpBlock({ refs: { signInRef, signUpRef } }) {
             Already have an account?&nbsp;
             <span
               onClick={() => {
+                toast.dismiss();
+
                 anime({
                   targets: ".sign-up__picture",
                   opacity: [1, 0],

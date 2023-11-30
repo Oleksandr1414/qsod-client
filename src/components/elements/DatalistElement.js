@@ -4,7 +4,11 @@ import { useFormContext } from "react-hook-form";
 import "@styles/elements/DataListElement.css";
 
 export default function DatalistElement({ dataList, placeholder, inputName }) {
-  const { register, setValue } = useFormContext();
+  const {
+    register,
+    setValue,
+    formState: { errors },
+  } = useFormContext();
 
   const nameInput = useRef();
   const nameDataList = useRef();
@@ -18,7 +22,7 @@ export default function DatalistElement({ dataList, placeholder, inputName }) {
       return;
     }
 
-    register(inputName, { required: true });
+    register(inputName, { required: `The ${inputName} is a required field.` });
 
     for (let option of nameDataList.current.options) {
       option.onclick = function () {
@@ -86,6 +90,7 @@ export default function DatalistElement({ dataList, placeholder, inputName }) {
         onFocus={onFocusNameInput}
         onInput={onInputNameInput}
         onKeyDown={onKeyDownNameInput}
+        className={errors.country && "error"}
       />
       <datalist ref={nameDataList} className="datalist__container">
         {dataList.map((el) => (
