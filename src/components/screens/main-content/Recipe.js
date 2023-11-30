@@ -44,7 +44,7 @@ export default function Recipe() {
   }, [recipeInfo]);
 
   return (
-    <div className="main-container recipe-container">
+    <div className="main-container recipe-container mt-70">
       {recipeInfo ? (
         <>
           <div className="recipe-components">

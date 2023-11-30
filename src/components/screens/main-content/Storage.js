@@ -34,9 +34,7 @@ export default function Storage() {
             placeholder="Ingridient"
             dataList={["Pork", "Chicken", "Veal", "Neck"]}
           />
-
           <input placeholder="Amount" />
-
           <button className="add">
             <Add /> Add
           </button>

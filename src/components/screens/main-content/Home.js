@@ -1,3 +1,4 @@
+import CornerElement from "@components/elements/CornerElement";
 import MiniRecipeElement from "@components/elements/MiniRecipeElement";
 import { format } from "date-fns";
 import { useEffect, useMemo, useState } from "react";
@@ -7,7 +8,6 @@ import { userData } from "@data/user";
 import "@styles/screens//main-content/Home.css";
 
 import { ReactComponent as ArrowRightUp } from "@icons/system/ArrowRightUp.svg";
-import { ReactComponent as Corner } from "@icons/system/Corner.svg";
 import { ReactComponent as DoubleTopArrow } from "@icons/system/ArrowTopDouble.svg";
 
 export default function Home() {
@@ -26,10 +26,10 @@ export default function Home() {
   return (
     <div className="main-container home-container">
       <div className="fly-block">
-        <Corner />
-        <Corner />
-        <Corner />
-        <Corner />
+        <CornerElement />
+        <CornerElement />
+        <CornerElement />
+        <CornerElement />
         <span className="rounded-span">Accessible</span>
         <p>Take control </p>
         <p>Of your nutrition</p>
@@ -43,7 +43,7 @@ export default function Home() {
         <h2>
           Fast
           <br />
-          Diner
+          Recipe For Diner
           <br />
           From AI
         </h2>

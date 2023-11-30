@@ -81,33 +81,6 @@
 .fly-block > .rounded-span {
   margin-bottom: 12px;
 }
-.fly-block > svg {
-  position: absolute;
-}
-.fly-block > svg:nth-child(1) {
-  bottom: -24px;
-  left: 214px;
-
-  transform: rotate(-180deg);
-}
-.fly-block > svg:nth-child(2) {
-  top: 23px;
-  left: 213px;
-
-  transform: rotate(90deg);
-}
-.fly-block > svg:nth-child(3) {
-  top: 66px;
-  left: 246px;
-
-  transform: rotate(90deg);
-}
-.fly-block > svg:nth-child(4) {
-  top: 136px;
-  left: 279px;
-
-  transform: rotate(-180deg);
-}
 .rounded-span {
   padding: 5px 20px;
 
@@ -115,6 +88,41 @@
 
   border: 1px solid black;
   border-radius: 30px;
+}
+.fly-block > .corner-element {
+  position: absolute;
+
+  width: 36px;
+  height: 36px;
+
+  /* background-color: red; */
+}
+.fly-block > .corner-element:nth-child(1) {
+  bottom: -36px;
+  left: 215px;
+
+  transform: rotate(-180deg);
+}
+.fly-block > .corner-element:nth-child(2) {
+  width: 24px;
+  height: 24px;
+
+  top: 22px;
+  left: 215px;
+
+  transform: rotate(90deg);
+}
+.fly-block > .corner-element:nth-child(3) {
+  top: 54px;
+  left: 246px;
+
+  transform: rotate(90deg);
+}
+.fly-block > .corner-element:nth-child(4) {
+  top: 136px;
+  left: 279px;
+
+  transform: rotate(-180deg);
 }
 
 .button-generation {
