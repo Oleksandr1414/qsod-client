@@ -4,7 +4,11 @@ import "@styles/elements/SelectElement.css";
 
 import { ReactComponent as Arrow } from "@icons/system/ArrowDown.svg";
 
-export default function SelectElement({ optionList, defaultName }) {
+export default function SelectElement({
+  optionList,
+  defaultName,
+  selectValue,
+}) {
   const activeDropdown = useRef(null);
 
   function closeAllDropdowns() {
@@ -53,6 +57,7 @@ export default function SelectElement({ optionList, defaultName }) {
 
     for (let o of optionsList) {
       o.addEventListener("click", () => {
+        selectValue(o.innerHTML);
         activeDropdown.current.querySelector(".selected-display").innerHTML =
           o.innerHTML;
       });

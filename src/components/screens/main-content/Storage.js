@@ -3,6 +3,7 @@ import DatalistElement from "@components/elements/DatalistElement";
 import FoodElement from "@components/elements/FoodElement";
 import SelectElement from "@components/elements/SelectElement";
 import { FormProvider, useForm } from "react-hook-form";
+import { ingredients } from "@data/ingredients";
 import { useNavigate } from "react-router-dom";
 
 import "@styles/screens//main-content/Storage.css";
@@ -11,31 +12,34 @@ import bgImageColor from "@images/bgImageColor.png";
 
 import { ReactComponent as Add } from "@icons/actions/Add.svg";
 import { ReactComponent as ArrowRightUp } from "@icons/system/ArrowRightUp.svg";
+import { useState } from "react";
+import { useMemo } from "react";
 
 export default function Storage() {
   const navigate = useNavigate();
   const methods = useForm();
+
+  const [selectValue, setSelectValue] = useState(null);
+  const dataListView = useMemo(() => {
+    return (
+      <DatalistElement
+        inputName="Ingridient"
+        placeholder="Ingridient"
+        dataList={selectValue ? ingredients[selectValue] : []}
+      />
+    );
+  }, [selectValue]);
 
   return (
     <div className="main-container storage-container mt-70">
       <div className="items-navigation-container">
         <FormProvider {...methods}>
           <SelectElement
-            defaultName={"Class"}
-            optionList={[
-              "Meat",
-              "Milk",
-              "Herbs",
-              "Spices",
-              "Fruits",
-              "Vegetables",
-            ]}
+            defaultName={"Category"}
+            optionList={Object.keys(ingredients)}
+            selectValue={setSelectValue}
           />
-          <DatalistElement
-            inputName="Ingridient"
-            placeholder="Ingridient"
-            dataList={["Pork", "Chicken", "Veal", "Neck"]}
-          />
+          {dataListView}
           <input placeholder="Amount" />
           <button className="add">
             <Add /> Add
@@ -47,12 +51,12 @@ export default function Storage() {
           <ClassBlockElement
             icon={"AL"}
             title={"All categories"}
-            productsCount={15}
+            productsCount={17}
             selected={true}
           />
           <ClassBlockElement icon={"FO"} title={"Meat"} productsCount={5} />
-          <ClassBlockElement icon={"FU"} title={"Fruits"} productsCount={10} />
-          <ClassBlockElement icon={"MI"} title={"Milk"} productsCount={7} />
+          <ClassBlockElement icon={"FU"} title={"Fruits"} productsCount={8} />
+          <ClassBlockElement icon={"DA"} title={"Dairy"} productsCount={4} />
         </div>
         <div className="items-list">
           <div className="items-list-header">
@@ -67,7 +71,7 @@ export default function Storage() {
               <p className="class-header">Meat (5)</p>
               <FoodElement
                 id={"1A3BDC6"}
-                img={"AL"}
+                img={"PO"}
                 name={"Pork"}
                 amount={300}
               />
@@ -79,63 +83,82 @@ export default function Storage() {
               />
               <FoodElement
                 id={"1A3BDC8"}
-                img={"VE"}
-                name={"Veal"}
+                img={"BE"}
+                name={"Beef"}
                 amount={250}
               />
             </>
             <>
-              <p className="class-header">Fruits (10)</p>
+              <p className="class-header">Fruits (8)</p>
               <FoodElement
                 id={"1A3BDC6"}
-                img={"AL"}
-                name={"Pork"}
-                amount={110}
+                img={"AP"}
+                name={"Apples"}
+                amount={3}
               />
               <FoodElement
                 id={"1A3BDC7"}
-                img={"VE"}
-                name={"Chicken"}
-                amount={250}
+                img={"BA"}
+                name={"Bananas"}
+                amount={5}
               />
               <FoodElement
                 id={"1A3BDC8"}
-                img={"VE"}
-                name={"Veal"}
-                amount={300}
+                img={"OR"}
+                name={"Oranges"}
+                amount={2}
               />
               <FoodElement
                 id={"1A3BDC8"}
-                img={"VE"}
-                name={"Veal"}
-                amount={420}
+                img={"PE"}
+                name={"Pears"}
+                amount={4}
+              />
+              <FoodElement id={"1A3BDC8"} img={"KI"} name={"Kiwi"} amount={1} />
+              <FoodElement
+                id={"1A3BDC8"}
+                img={"OR"}
+                name={"Oranges"}
+                amount={2}
+              />
+              <FoodElement
+                id={"1A3BDC8"}
+                img={"PE"}
+                name={"Pears"}
+                amount={4}
+              />
+              <FoodElement
+                id={"1A3BDC7"}
+                img={"BA"}
+                name={"Bananas"}
+                amount={5}
               />
             </>
             <>
-              <p className="class-header">Milk (5)</p>
+              <p className="class-header">Dairy (4)</p>
               <FoodElement
                 id={"1A3BDC6"}
-                img={"AL"}
-                name={"Pork"}
-                amount={140}
+                img={"MI"}
+                name={"Milk"}
+                amount={800}
               />
               <FoodElement
                 id={"1A3BDC8"}
-                img={"VE"}
-                name={"Veal"}
-                amount={420}
+                img={"CH"}
+                name={"Cheese"}
+                amount={400}
               />
               <FoodElement
                 id={"1A3BDC6"}
-                img={"CO"}
-                name={"Pork"}
-                amount={1420}
+                img={"YO"}
+                name={"Yogurt"}
+                amount={145}
               />
               <FoodElement
                 id={"1A3BDC8"}
-                img={"AF"}
-                name={"Veal"}
-                amount={420}
+                img={"BU"}
+                name={"Butter"}
+                amount={240}
               />
             </>
           </div>
