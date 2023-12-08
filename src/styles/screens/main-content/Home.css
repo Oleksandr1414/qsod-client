@@ -107,7 +107,7 @@
 }
 .fly-block > .corner-element:nth-child(1) {
   bottom: -36px;
-  left: 215px;
+  left: 214px;
 
   transform: rotate(-180deg);
 }
@@ -115,8 +115,8 @@
   width: 24px;
   height: 24px;
 
-  top: 22px;
-  left: 215px;
+  top: 23px;
+  left: 214px;
 
   transform: rotate(90deg);
 }

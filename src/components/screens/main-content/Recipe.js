@@ -14,6 +14,17 @@ export default function Recipe() {
   const [isImerStart, setIsImerStart] = useState(false);
   const { pathname } = useLocation();
 
+  const [intervalId, setIntervalId] = useState(null);
+  const [currentTime, setCurrentTime] = useState(0);
+  const getTimeView = useMemo(() => {
+    const minutes = Math.round(currentTime / 60);
+    const seconds = Math.round(currentTime % 60);
+
+    return `${minutes > 9 ? minutes : "0" + minutes}:${
+      seconds > 9 ? seconds : "0" + seconds
+    }`;
+  }, [currentTime]);
+
   const recipeInfo = useMemo(() => {
     if (!pathname) {
       return null;
@@ -78,12 +89,14 @@ export default function Recipe() {
           <div className="recipe-option">
             <div className="recipe-controller">
               <TimeIcon />
-              <div className="timer">00:00</div>
+              <div className="timer">{getTimeView}</div>
               {isImerStart ? (
                 <button
                   className="stop"
                   onClick={() => {
                     setIsImerStart(false);
+                    console.log(intervalId);
+                    clearInterval(intervalId);
                   }}
                 >
                   Stop <Stop />
@@ -93,6 +106,13 @@ export default function Recipe() {
                   className="start"
                   onClick={() => {
                     setIsImerStart(true);
+                    setCurrentTime(0);
+                    setIntervalId(
+                      setInterval(
+                        () => setCurrentTime((prev) => prev + 1),
+                        1000
+                      )
+                    );
                   }}
                 >
                   Start <Play />

@@ -52,7 +52,8 @@ a {
   text-decoration: none;
 }
 
-svg > path {
+svg > path,
+svg > circle {
   stroke: #000;
   stroke-width: 0.8;
 }
