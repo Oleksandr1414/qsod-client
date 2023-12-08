@@ -57,7 +57,7 @@ export default function SelectElement({
 
     for (let o of optionsList) {
       o.addEventListener("click", () => {
-        selectValue(o.innerHTML);
+        selectValue && selectValue(o.innerHTML);
         activeDropdown.current.querySelector(".selected-display").innerHTML =
           o.innerHTML;
       });

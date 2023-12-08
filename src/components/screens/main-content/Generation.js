@@ -1,5 +1,9 @@
-import anime from "animejs";
+import MiniRecipeElement from "@components/elements/MiniRecipeElement.js";
 import SelectElement from "@components/elements/SelectElement";
+import anime from "animejs";
+import { useNavigate } from "react-router-dom";
+import { userData } from "@data/user.js";
+import { useState } from "react";
 
 import "@styles/screens/main-content/Generation.css";
 
@@ -31,15 +35,47 @@ export default function Generation() {
   //   opacity: [0, 1],
   // });
 
+  const [isShowRecipes, setIsShowRecipes] = useState(false);
+
   return (
     <div className="main-container generation-container">
-      <div className="generation-options-container">
-        <img src={bgImageColor} alt="generation__picture" />
-        <p className="generation-options-title letters">Generate recipes</p>
-        <p className="generation-options-subtitle">
+      <div
+        className="generation-options-container"
+        style={
+          isShowRecipes
+            ? {
+                justifyContent: "flex-start",
+                paddingTop: 20,
+                height: "max-content",
+              }
+            : {}
+        }
+      >
+        <img
+          src={bgImageColor}
+          alt="generation__picture"
+          style={isShowRecipes ? { height: "150px" } : {}}
+        />
+        <p
+          className="generation-options-title letters"
+          style={isShowRecipes ? { display: "none" } : {}}
+        >
+          Generate recipes
+        </p>
+        <p
+          className="generation-options-subtitle"
+          style={isShowRecipes ? { display: "none" } : {}}
+        >
           Generate a recipe based on your preferences and capabilities
         </p>
-        <div className="option-block">
+        <div
+          className="option-block"
+          style={
+            isShowRecipes
+              ? { boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" }
+              : {}
+          }
+        >
           <div className="option-inputs">
             <div className="option-input">
               <SelectElement
@@ -70,12 +106,24 @@ export default function Generation() {
             </div>
           </div>
           <div className="option-search">
-            <button>
+            <button onClick={() => setIsShowRecipes(true)}>
               Generate <MagniferIcon />
             </button>
           </div>
         </div>
       </div>
+      {isShowRecipes ? (
+        <div className="generation-results">
+          {userData.history.slice(0, 3).map((id) => (
+            <MiniRecipeElement
+              id={id}
+              key={id}
+              cornerColor="gray"
+              showInfo={true}
+            />
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 }

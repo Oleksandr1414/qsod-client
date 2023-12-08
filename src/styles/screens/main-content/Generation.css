@@ -53,6 +53,22 @@
   font-weight: 300;
 }
 
+.generation-results {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.generation-results > div {
+  width: 25svw;
+  height: 45svh;
+
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.generation-results .link-to-recipe {
+  background-color: #f1f1f1;
+}
 .option-block {
   width: max-content;
   height: max-content;
